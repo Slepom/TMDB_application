@@ -13,10 +13,7 @@ class AuthenticationViewController: UIViewController {
             request.responseDecodable(of: NetworkManager.self) { response in
                 print(try? response.result.get().success)
                
-                
-                
-                
-                
+ 
             }
         }
         
