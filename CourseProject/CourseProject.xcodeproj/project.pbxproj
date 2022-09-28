@@ -17,6 +17,7 @@
 		D81616B028E0BE1A00928EEC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D81616AF28E0BE1A00928EEC /* Podfile */; };
 		D81616B328E0BF5300928EEC /* RequestStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81616B228E0BF5300928EEC /* RequestStruct.swift */; };
 		D81616B528E0C3A200928EEC /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81616B428E0C3A200928EEC /* AuthenticationViewController.swift */; };
+		D8E48AEE28E4912100112A43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E48AED28E4912100112A43 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D81616AF28E0BE1A00928EEC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = CourseProject/Authentication/Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D81616B228E0BF5300928EEC /* RequestStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStruct.swift; sourceTree = "<group>"; };
 		D81616B428E0C3A200928EEC /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		D8E48AED28E4912100112A43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E837F0B0AF116B28959426EA /* Pods-CourseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseProject.debug.xcconfig"; path = "Target Support Files/Pods-CourseProject/Pods-CourseProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,12 +89,12 @@
 			isa = PBXGroup;
 			children = (
 				D81616B128E0BEF100928EEC /* Authentication */,
+				D8E48AEB28E48A8800112A43 /* ViewModels */,
+				D8E48AEA28E48A6A00112A43 /* Views */,
+				D8E48AE928E48A5200112A43 /* Models */,
 				D816169B28E0BC7E00928EEC /* AppDelegate.swift */,
 				D816169D28E0BC7E00928EEC /* SceneDelegate.swift */,
-				D816169F28E0BC7E00928EEC /* ViewController.swift */,
-				D81616A128E0BC7E00928EEC /* Main.storyboard */,
 				D81616A428E0BC8200928EEC /* Assets.xcassets */,
-				D81616A628E0BC8200928EEC /* LaunchScreen.storyboard */,
 				D81616A928E0BC8200928EEC /* Info.plist */,
 			);
 			path = CourseProject;
@@ -102,10 +104,43 @@
 			isa = PBXGroup;
 			children = (
 				D81616AF28E0BE1A00928EEC /* Podfile */,
-				D81616B228E0BF5300928EEC /* RequestStruct.swift */,
-				D81616B428E0C3A200928EEC /* AuthenticationViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D8E48AE928E48A5200112A43 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D81616B228E0BF5300928EEC /* RequestStruct.swift */,
+				D81616B428E0C3A200928EEC /* AuthenticationViewController.swift */,
+				D8E48AED28E4912100112A43 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D8E48AEA28E48A6A00112A43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D816169F28E0BC7E00928EEC /* ViewController.swift */,
+				D8E48AEC28E48ABC00112A43 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D8E48AEB28E48A8800112A43 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D8E48AEC28E48ABC00112A43 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D81616A628E0BC8200928EEC /* LaunchScreen.storyboard */,
+				D81616A128E0BC7E00928EEC /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +261,7 @@
 			files = (
 				D81616B328E0BF5300928EEC /* RequestStruct.swift in Sources */,
 				D81616A028E0BC7E00928EEC /* ViewController.swift in Sources */,
+				D8E48AEE28E4912100112A43 /* User.swift in Sources */,
 				D81616B528E0C3A200928EEC /* AuthenticationViewController.swift in Sources */,
 				D816169C28E0BC7E00928EEC /* AppDelegate.swift in Sources */,
 				D816169E28E0BC7E00928EEC /* SceneDelegate.swift in Sources */,

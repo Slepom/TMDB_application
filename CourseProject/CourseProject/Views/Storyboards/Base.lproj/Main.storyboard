@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gladiatorImage" translatesAutoresizingMaskIntoConstraints="NO" id="Cdv-pc-e4u">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOK-Br-UmR">
+                                <rect key="frame" x="40" y="801" width="348" height="35"/>
+                                <color key="backgroundColor" red="0.15119460230000001" green="0.043478444220000002" blue="0.01966942847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Password">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="22" name="Baskerville"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-Ui-ekE">
+                                <rect key="frame" x="156" y="856" width="116" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="default" renderingMode="hierarchical">
+                                        <hierarchicalColors>
+                                            <color red="0.11238475890000001" green="0.035530101510000002" blue="0.01964504085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="43"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rFs-PM-P2s"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPx-4l-p5a">
+                                <rect key="frame" x="40" y="746" width="348" height="35"/>
+                                <color key="backgroundColor" red="0.15119460230000001" green="0.043478444220000002" blue="0.01966942847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Login">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="22" name="Baskerville"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Cdv-pc-e4u" secondAttribute="bottom" id="1XJ-ma-NGX"/>
+                            <constraint firstItem="Nc6-Ui-ekE" firstAttribute="top" secondItem="xOK-Br-UmR" secondAttribute="bottom" constant="20" id="5TD-4W-T6t"/>
+                            <constraint firstItem="xOK-Br-UmR" firstAttribute="top" secondItem="CPx-4l-p5a" secondAttribute="bottom" constant="20" id="Dvk-YF-Tkf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nc6-Ui-ekE" secondAttribute="trailing" constant="136" id="KUa-OJ-QuJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Cdv-pc-e4u" secondAttribute="trailing" id="Nd3-a7-DNP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xOK-Br-UmR" secondAttribute="trailing" constant="20" id="OLj-a8-mdr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CPx-4l-p5a" secondAttribute="trailing" constant="20" id="SEK-vS-uLc"/>
+                            <constraint firstItem="Cdv-pc-e4u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UDm-T7-nUD"/>
+                            <constraint firstItem="Cdv-pc-e4u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VK0-7P-M3x"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Nc6-Ui-ekE" secondAttribute="bottom" constant="40" id="Xx8-As-5Wt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="xOK-Br-UmR" secondAttribute="bottom" constant="90" id="aRm-Ba-rf6"/>
+                            <constraint firstItem="CPx-4l-p5a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="kPd-hE-yDn"/>
+                            <constraint firstItem="Nc6-Ui-ekE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="136" id="moy-sb-sfL"/>
+                            <constraint firstItem="xOK-Br-UmR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="sXj-sM-xYX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="CPx-4l-p5a" id="uH1-a2-XJv"/>
+                        <outlet property="passwordTextField" destination="xOK-Br-UmR" id="VeM-a5-EtW"/>
+                        <outlet property="view" destination="Cdv-pc-e4u" id="L8i-cd-4WS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.644859813084111" y="53.779697624190071"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gladiatorImage" width="1536" height="2732"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
