@@ -3,7 +3,7 @@ import Foundation
 
 
 
-struct NetworkManager: Codable {
+struct TokenModel: Codable {
     let success: Bool
     let expiresAt, requestToken: String
     

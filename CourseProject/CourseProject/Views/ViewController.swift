@@ -4,18 +4,41 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var viewModelButton = ViewModelButton()
+    
     @IBOutlet weak var loginTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
+        
+    @IBOutlet weak var checkLabel: UILabel!
     
-    @IBAction func button(_ sender: Any) {
+    @IBAction func buttonAction(_ sender: Any) {
+        checkPasswordLogin()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        checkLabel.text = " "
+        bindViewModelButton()
+    }
+    
+    
+    
+    // - MARK: binding VM and VC
+    
+    func bindViewModelButton(){
+        viewModelButton.statusText.bind({ (statusText) in
+            DispatchQueue.main.async{
+                self.checkLabel.text = statusText
+            }
+            
+        })
     }
 
-
+    // - MARK: check login and password
+    func checkPasswordLogin(){
+        viewModelButton.checkSignUpButton(login: loginTextField.text ?? "", password: passwordTextField.text ?? " ")
+    }
+    
 }
 
