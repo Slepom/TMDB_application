@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Erv-V6-gIF">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -13,7 +13,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC" userLabel="ViewStart">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -58,7 +58,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-Ui-ekE">
-                                <rect key="frame" x="156" y="851" width="116" height="30"/>
+                                <rect key="frame" x="156" y="851" width="62" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="play.fill" catalog="system" symbolScale="default" renderingMode="hierarchical">
@@ -83,7 +83,7 @@
                             <constraint firstItem="Nc6-Ui-ekE" firstAttribute="top" secondItem="xOK-Br-UmR" secondAttribute="bottom" constant="44" id="5TD-4W-T6t"/>
                             <constraint firstItem="pdV-ao-lGe" firstAttribute="leading" secondItem="I7O-Nw-nd8" secondAttribute="leading" constant="20" id="AgN-lq-dhH"/>
                             <constraint firstItem="xOK-Br-UmR" firstAttribute="top" secondItem="CPx-4l-p5a" secondAttribute="bottom" constant="20" id="Dvk-YF-Tkf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nc6-Ui-ekE" secondAttribute="trailing" constant="136" id="KUa-OJ-QuJ"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Nc6-Ui-ekE" secondAttribute="trailing" id="KUa-OJ-QuJ"/>
                             <constraint firstAttribute="trailing" secondItem="Cdv-pc-e4u" secondAttribute="trailing" id="Nd3-a7-DNP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xOK-Br-UmR" secondAttribute="trailing" constant="20" id="OLj-a8-mdr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CPx-4l-p5a" secondAttribute="trailing" constant="20" id="SEK-vS-uLc"/>
@@ -108,10 +108,58 @@
             </objects>
             <point key="canvasLocation" x="33.644859813084111" y="53.779697624190071"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="BdM-PQ-WMl">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="EuE-tZ-Sfm" customClass="AuthenticationViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="scf-So-0B6">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="secondScreen" translatesAutoresizingMaskIntoConstraints="NO" id="5ds-o8-rYh">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5ds-o8-rYh" firstAttribute="leading" secondItem="scf-So-0B6" secondAttribute="leading" id="LRa-N6-xr9"/>
+                            <constraint firstItem="5ds-o8-rYh" firstAttribute="top" secondItem="scf-So-0B6" secondAttribute="top" id="ieR-u8-k8c"/>
+                            <constraint firstAttribute="bottom" secondItem="5ds-o8-rYh" secondAttribute="bottom" id="pbe-OD-bJ6"/>
+                            <constraint firstAttribute="trailing" secondItem="5ds-o8-rYh" secondAttribute="trailing" id="zFb-B4-irA"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="CdG-bb-iRw"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="view" destination="5ds-o8-rYh" id="fbX-kJ-sf9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6iW-TC-ZzH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872.8971962616822" y="53.779697624190071"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="FxB-jZ-uVn">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Erv-V6-gIF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RoD-Uc-1Dq">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="EuE-tZ-Sfm" kind="relationship" relationship="viewControllers" id="Khz-LI-1SR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aON-Tp-Eiq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972.89719626168221" y="53.779697624190071"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gladiatorImage" width="1536" height="2732"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="secondScreen" width="981" height="1080"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

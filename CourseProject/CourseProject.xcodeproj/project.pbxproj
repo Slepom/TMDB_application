@@ -15,7 +15,7 @@
 		D81616A528E0BC8200928EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81616A428E0BC8200928EEC /* Assets.xcassets */; };
 		D81616A828E0BC8200928EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81616A628E0BC8200928EEC /* LaunchScreen.storyboard */; };
 		D81616B028E0BE1A00928EEC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D81616AF28E0BE1A00928EEC /* Podfile */; };
-		D81616B328E0BF5300928EEC /* RequestStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81616B228E0BF5300928EEC /* RequestStruct.swift */; };
+		D81616B328E0BF5300928EEC /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81616B228E0BF5300928EEC /* TokenModel.swift */; };
 		D81616B528E0C3A200928EEC /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81616B428E0C3A200928EEC /* AuthenticationViewController.swift */; };
 		D839EF9628E5F0830045D361 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9528E5F0830045D361 /* NetWorkManager.swift */; };
 		D8E48AEE28E4912100112A43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E48AED28E4912100112A43 /* User.swift */; };
@@ -35,7 +35,7 @@
 		D81616A728E0BC8200928EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D81616A928E0BC8200928EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D81616AF28E0BE1A00928EEC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = CourseProject/Authentication/Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		D81616B228E0BF5300928EEC /* RequestStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStruct.swift; sourceTree = "<group>"; };
+		D81616B228E0BF5300928EEC /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		D81616B428E0C3A200928EEC /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		D839EF9528E5F0830045D361 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		D8E48AED28E4912100112A43 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		D8E48AE928E48A5200112A43 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D81616B228E0BF5300928EEC /* RequestStruct.swift */,
+				D81616B228E0BF5300928EEC /* TokenModel.swift */,
 				D8E48AED28E4912100112A43 /* User.swift */,
 			);
 			path = Models;
@@ -276,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D81616B328E0BF5300928EEC /* RequestStruct.swift in Sources */,
+				D81616B328E0BF5300928EEC /* TokenModel.swift in Sources */,
 				D81616A028E0BC7E00928EEC /* ViewController.swift in Sources */,
 				D8E48AEE28E4912100112A43 /* User.swift in Sources */,
 				D81616B528E0C3A200928EEC /* AuthenticationViewController.swift in Sources */,
