@@ -120,6 +120,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="oNV-GH-V3k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5ds-o8-rYh" firstAttribute="leading" secondItem="scf-So-0B6" secondAttribute="leading" id="LRa-N6-xr9"/>
@@ -144,6 +145,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Erv-V6-gIF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RoD-Uc-1Dq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
