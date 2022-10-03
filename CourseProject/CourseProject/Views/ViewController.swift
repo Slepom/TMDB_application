@@ -6,7 +6,7 @@ class ViewController: UIViewController {
 
     var viewModelButton = ViewModelButton()
     
-    var viewModelAuthentication = ViewModelAuthentication()
+   // var viewModelAuthentication = ViewModelAuthentication()
     
     @IBOutlet weak var loginTextField: UITextField!
     
