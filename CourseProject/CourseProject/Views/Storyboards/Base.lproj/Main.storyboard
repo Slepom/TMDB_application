@@ -129,7 +129,7 @@
                             <constraint firstAttribute="trailing" secondItem="5ds-o8-rYh" secondAttribute="trailing" id="zFb-B4-irA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="CdG-bb-iRw"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="CdG-bb-iRw" userLabel="Genre"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="view" destination="5ds-o8-rYh" id="fbX-kJ-sf9"/>

@@ -6,7 +6,6 @@ class ViewController: UIViewController {
 
     var viewModelButton = ViewModelButton()
     
-   // var viewModelAuthentication = ViewModelAuthentication()
     
     @IBOutlet weak var loginTextField: UITextField!
     
@@ -16,7 +15,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonAction(_ sender: Any) {
         checkPasswordLogin()
-        
+        NetworkManager.shared.posttoken()
     }
     
     override func viewDidLoad() {
@@ -46,4 +45,5 @@ class ViewController: UIViewController {
     }
     
 }
+
 
