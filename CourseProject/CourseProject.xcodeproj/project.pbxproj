@@ -17,10 +17,11 @@
 		D81616B028E0BE1A00928EEC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D81616AF28E0BE1A00928EEC /* Podfile */; };
 		D81616B328E0BF5300928EEC /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81616B228E0BF5300928EEC /* TokenModel.swift */; };
 		D81616B528E0C3A200928EEC /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81616B428E0C3A200928EEC /* AuthenticationViewController.swift */; };
-		D839EF9628E5F0830045D361 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9528E5F0830045D361 /* NetWorkManager.swift */; };
 		D839EF9828E82BCF0045D361 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9728E82BCF0045D361 /* NetworkManager.swift */; };
 		D839EF9A28E82D230045D361 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9928E82D230045D361 /* Constants.swift */; };
 		D839EF9E28E9D30D0045D361 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9D28E9D30D0045D361 /* SessionModel.swift */; };
+		D84DF97828ED9FA400372C07 /* CreateLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84DF97728ED9FA400372C07 /* CreateLayout.swift */; };
+		D88D5B1028ED91CD00AE63B1 /* GettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D5B0F28ED91CD00AE63B1 /* GettingData.swift */; };
 		D8AF075328EC568500017958 /* DetailsAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF075228EC568500017958 /* DetailsAccountModel.swift */; };
 		D8AF075528EC8E2900017958 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF075428EC8E2900017958 /* GenreModel.swift */; };
 		D8AF075728EC954E00017958 /* ViewModelListMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF075628EC954E00017958 /* ViewModelListMovie.swift */; };
@@ -44,10 +45,11 @@
 		D81616AF28E0BE1A00928EEC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = CourseProject/Authentication/Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D81616B228E0BF5300928EEC /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		D81616B428E0C3A200928EEC /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
-		D839EF9528E5F0830045D361 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		D839EF9728E82BCF0045D361 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D839EF9928E82D230045D361 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D839EF9D28E9D30D0045D361 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		D84DF97728ED9FA400372C07 /* CreateLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLayout.swift; sourceTree = "<group>"; };
+		D88D5B0F28ED91CD00AE63B1 /* GettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingData.swift; sourceTree = "<group>"; };
 		D8AF075228EC568500017958 /* DetailsAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAccountModel.swift; sourceTree = "<group>"; };
 		D8AF075428EC8E2900017958 /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
 		D8AF075628EC954E00017958 /* ViewModelListMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelListMovie.swift; sourceTree = "<group>"; };
@@ -108,28 +110,91 @@
 		D816169A28E0BC7E00928EEC /* CourseProject */ = {
 			isa = PBXGroup;
 			children = (
-				D81616B128E0BEF100928EEC /* Authentication */,
-				D8E48AEB28E48A8800112A43 /* ViewModels */,
-				D8E48AEA28E48A6A00112A43 /* Views */,
-				D8E48AE928E48A5200112A43 /* Models */,
+				D88D5B0D28ED914500AE63B1 /* Authentication */,
+				D88D5B0828ED8E3F00AE63B1 /* FirstScreen */,
+				D88D5B0C28ED8EE100AE63B1 /* SecondScreen */,
+				D8E48AEC28E48ABC00112A43 /* Storyboards */,
+				D81616B128E0BEF100928EEC /* NetManager */,
 				D816169B28E0BC7E00928EEC /* AppDelegate.swift */,
 				D816169D28E0BC7E00928EEC /* SceneDelegate.swift */,
 				D81616A428E0BC8200928EEC /* Assets.xcassets */,
 				D81616A928E0BC8200928EEC /* Info.plist */,
-				D839EF9528E5F0830045D361 /* NetWorkManager.swift */,
 			);
 			path = CourseProject;
 			sourceTree = "<group>";
 		};
-		D81616B128E0BEF100928EEC /* Authentication */ = {
+		D81616B128E0BEF100928EEC /* NetManager */ = {
 			isa = PBXGroup;
 			children = (
-				D839EF9728E82BCF0045D361 /* NetworkManager.swift */,
-				D8E48AED28E4912100112A43 /* User.swift */,
 				D839EF9928E82D230045D361 /* Constants.swift */,
+				D839EF9728E82BCF0045D361 /* NetworkManager.swift */,
+				D88D5B0E28ED918000AE63B1 /* GettingData */,
+				D8E48AED28E4912100112A43 /* User.swift */,
+			);
+			path = NetManager;
+			sourceTree = "<group>";
+		};
+		D88D5B0828ED8E3F00AE63B1 /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D88D5B0B28ED8E6800AE63B1 /* View */,
+				D88D5B0A28ED8E5700AE63B1 /* Models */,
+				D88D5B0928ED8E4C00AE63B1 /* ViewModels */,
+			);
+			path = FirstScreen;
+			sourceTree = "<group>";
+		};
+		D88D5B0928ED8E4C00AE63B1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D8E48AF228E5B17D00112A43 /* BindingButton.swift */,
+				D8E48AEF28E5AB4900112A43 /* ViewModelButton.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D88D5B0A28ED8E5700AE63B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D81616B228E0BF5300928EEC /* TokenModel.swift */,
+				D839EF9D28E9D30D0045D361 /* SessionModel.swift */,
+				D8AF075228EC568500017958 /* DetailsAccountModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D88D5B0B28ED8E6800AE63B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D816169F28E0BC7E00928EEC /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D88D5B0C28ED8EE100AE63B1 /* SecondScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D8E48AEA28E48A6A00112A43 /* Views */,
+				D8E48AE928E48A5200112A43 /* Models */,
+				D8E48AEB28E48A8800112A43 /* ViewModels */,
+			);
+			path = SecondScreen;
+			sourceTree = "<group>";
+		};
+		D88D5B0D28ED914500AE63B1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
 				D81616AF28E0BE1A00928EEC /* Podfile */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D88D5B0E28ED918000AE63B1 /* GettingData */ = {
+			isa = PBXGroup;
+			children = (
+				D88D5B0F28ED91CD00AE63B1 /* GettingData.swift */,
+			);
+			path = GettingData;
 			sourceTree = "<group>";
 		};
 		D8AF075828EC96C200017958 /* CollectionGenres */ = {
@@ -145,9 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				D8AF075828EC96C200017958 /* CollectionGenres */,
-				D81616B228E0BF5300928EEC /* TokenModel.swift */,
-				D839EF9D28E9D30D0045D361 /* SessionModel.swift */,
-				D8AF075228EC568500017958 /* DetailsAccountModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,9 +217,7 @@
 		D8E48AEA28E48A6A00112A43 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D816169F28E0BC7E00928EEC /* ViewController.swift */,
 				D81616B428E0C3A200928EEC /* AuthenticationViewController.swift */,
-				D8E48AEC28E48ABC00112A43 /* Storyboards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,8 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				D8E48AF128E5AD7000112A43 /* Bindings */,
-				D8E48AEF28E5AB4900112A43 /* ViewModelButton.swift */,
 				D8AF075628EC954E00017958 /* ViewModelListMovie.swift */,
+				D84DF97728ED9FA400372C07 /* CreateLayout.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -184,7 +244,6 @@
 		D8E48AF128E5AD7000112A43 /* Bindings */ = {
 			isa = PBXGroup;
 			children = (
-				D8E48AF228E5B17D00112A43 /* BindingButton.swift */,
 			);
 			path = Bindings;
 			sourceTree = "<group>";
@@ -313,14 +372,15 @@
 				D81616B528E0C3A200928EEC /* AuthenticationViewController.swift in Sources */,
 				D839EF9828E82BCF0045D361 /* NetworkManager.swift in Sources */,
 				D816169C28E0BC7E00928EEC /* AppDelegate.swift in Sources */,
-				D839EF9628E5F0830045D361 /* NetWorkManager.swift in Sources */,
 				D839EF9A28E82D230045D361 /* Constants.swift in Sources */,
 				D8AF075328EC568500017958 /* DetailsAccountModel.swift in Sources */,
+				D84DF97828ED9FA400372C07 /* CreateLayout.swift in Sources */,
 				D8E48AF328E5B17D00112A43 /* BindingButton.swift in Sources */,
 				D8AF075A28EC976C00017958 /* MovieModel.swift in Sources */,
 				D816169E28E0BC7E00928EEC /* SceneDelegate.swift in Sources */,
 				D8AF075728EC954E00017958 /* ViewModelListMovie.swift in Sources */,
 				D8E48AF028E5AB4900112A43 /* ViewModelButton.swift in Sources */,
+				D88D5B1028ED91CD00AE63B1 /* GettingData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

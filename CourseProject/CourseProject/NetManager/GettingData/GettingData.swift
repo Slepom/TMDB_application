@@ -1,16 +1,13 @@
 
-
-import UIKit
+import Foundation
 import Alamofire
 
-class AuthenticationViewController: UIViewController {
-   
+class GettingData{
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-       createListMovie()
-    }
+    static let shared = GettingData()
+    
+    private init(){}
+    
     
     func getGenres(_ complitionHandler: @escaping ([Genre]) -> Void){
         
