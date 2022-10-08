@@ -9,6 +9,15 @@ class AuthenticationViewController: UIViewController {
     
     enum SectionKind: Int, CaseIterable{
         case list, grid
+        var columnCount: Int {
+            switch self {
+            case .list:
+                return 2
+            case .grid:
+                return 3
+            }
+        }
+     
     }
   
     var dataSource: UICollectionViewDiffableDataSource<SectionKind, Int>!
@@ -26,6 +35,7 @@ class AuthenticationViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
+        collectionView.register(UserCellSecond.self, forCellWithReuseIdentifier: UserCellSecond.reuseId)
         setupDataSource()
         reloadData()
         view.addSubview(collectionView)
@@ -48,18 +58,25 @@ class AuthenticationViewController: UIViewController {
     
     private func setupDataSource(){
         dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView, cellProvider: {(collectionView, indexPath, intValue)->UICollectionViewCell?  in
-            //let section = SectionKind(rawValue: indexPath.section)!
-           return self.configure(cellType: UserCell.self, with: intValue, for: indexPath)
-
+            let section = SectionKind(rawValue: indexPath.section)!
+            switch section {
+            case .list:
+                return self.configure(cellType: UserCell.self, with: intValue, for: indexPath)
+            case .grid:
+                return self.configure(cellType: UserCellSecond.self, with: intValue, for: indexPath)
+            }
             
         })
     }
     
     func reloadData(){
         var snapShot = NSDiffableDataSourceSnapshot<SectionKind, Int>()
+        let itemPerSection = 12
         SectionKind.allCases.forEach { sectionKind in
+            let itemOffSet = sectionKind.columnCount * itemPerSection
+            let itemUpperBound = itemOffSet + itemPerSection
             snapShot.appendSections([sectionKind])
-            snapShot.appendItems([1,2,3,4,5,6,7,8,9], toSection: sectionKind)
+            snapShot.appendItems(Array(itemOffSet..<itemUpperBound))
         }
         dataSource.apply(snapShot, animatingDifferences: false)
     }
@@ -81,12 +98,11 @@ class AuthenticationViewController: UIViewController {
         group.interItemSpacing = .fixed(spacing)
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = spacing
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 10, bottom: 10, trailing: 10)
+       section.orthogonalScrollingBehavior = .continuous
         let layout = UICollectionViewCompositionalLayout(section: section)
-        layout.accessibilityFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = 50
+        //config.interSectionSpacing = 30
         layout.configuration = config
         
         return layout
