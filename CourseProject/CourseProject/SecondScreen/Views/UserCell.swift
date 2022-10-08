@@ -12,9 +12,10 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         backgroundColor = .blue
-        setupConstrains()
-        self.layer.cornerRadius = 4
+        //setupConstrains()
+        self.layer.cornerRadius = 15
         self.clipsToBounds = true
     }
     

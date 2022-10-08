@@ -10,7 +10,7 @@ class AuthenticationViewController: UIViewController {
     enum SectionKind: Int, CaseIterable{
         case list, grid
     }
-    
+  
     var dataSource: UICollectionViewDiffableDataSource<SectionKind, Int>!
     
     override func viewDidLoad() {
@@ -20,18 +20,17 @@ class AuthenticationViewController: UIViewController {
         
     }
     
-  
+    
     func setupCollectionView(){
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
-        collectionView.register(NextCell.self, forCellWithReuseIdentifier: NextCell.reuseId)
         setupDataSource()
         reloadData()
         view.addSubview(collectionView)
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
+        //        collectionView.delegate = self
+        //        collectionView.dataSource = self
         
     }
     
@@ -47,22 +46,17 @@ class AuthenticationViewController: UIViewController {
     
     
     
-   private func setupDataSource(){
-       dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView, cellProvider: {(collectionView, indexPath, intValue)->UICollectionViewCell?  in
-           let section = SectionKind(rawValue: indexPath.section)!
-           switch section {
+    private func setupDataSource(){
+        dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView, cellProvider: {(collectionView, indexPath, intValue)->UICollectionViewCell?  in
+            //let section = SectionKind(rawValue: indexPath.section)!
+           return self.configure(cellType: UserCell.self, with: intValue, for: indexPath)
 
-           case .list:
-               return self.configure(cellType: UserCell.self, with: intValue, for: indexPath)
-           case .grid:
-               return self.configure(cellType: NextCell.self, with: intValue, for: indexPath)
-           }
-      
-       })
+            
+        })
     }
     
     func reloadData(){
-       var snapShot = NSDiffableDataSourceSnapshot<SectionKind, Int>()
+        var snapShot = NSDiffableDataSourceSnapshot<SectionKind, Int>()
         SectionKind.allCases.forEach { sectionKind in
             snapShot.appendSections([sectionKind])
             snapShot.appendItems([1,2,3,4,5,6,7,8,9], toSection: sectionKind)
@@ -74,10 +68,37 @@ class AuthenticationViewController: UIViewController {
     
     
     
-    
-    
-  
+    private func createLayout() -> UICollectionViewLayout{
+        
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1.0))
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.5))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+        let spacing = CGFloat(10)
+        
+        group.interItemSpacing = .fixed(spacing)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = spacing
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        section.orthogonalScrollingBehavior = .continuous
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        layout.accessibilityFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 50
+        layout.configuration = config
+        
+        return layout
+        
     }
+    
+    
+    
+    
+    
+    
+}
 
 //extension AuthenticationViewController: UICollectionViewDelegate, UICollectionViewDataSource{
 //    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -95,41 +116,41 @@ class AuthenticationViewController: UIViewController {
 
 extension AuthenticationViewController{
     
-    private func createLayout() -> UICollectionViewLayout{
-        
-t
-//
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.5))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-        let spacing = CGFloat(20)
-        
-        group.interItemSpacing = .fixed(spacing)
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = spacing
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: spacing, bottom: 0, trailing: spacing)
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        
-        return layout
-  
-}
-
-
-
-
-//
-//import SwiftUI
-//
-//struct FlowProvider: PreviewProvider{
-//    static var previews: some View{
-//        ContainerView().edgesIgnoringSafeArea(.all)
-//    }
-//    struct ContainerView: UIViewControllerRepresentable{
-//
-//        let tabBar = MainTabBarContreller
-//    }
-//
-//}
+    //    private func createLayout() -> UICollectionViewLayout{
+    //
+    //
+    ////
+    //        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+    //
+    //        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+    //        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.5))
+    //        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+    //        let spacing = CGFloat(20)
+    //
+    //        group.interItemSpacing = .fixed(spacing)
+    //        let section = NSCollectionLayoutSection(group: group)
+    //        section.interGroupSpacing = spacing
+    //        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: spacing, bottom: 0, trailing: spacing)
+    //        let layout = UICollectionViewCompositionalLayout(section: section)
+    //
+    //        return layout
+    //
+    //}
+    
+    
+    
+    
+    //
+    //import SwiftUI
+    //
+    //struct FlowProvider: PreviewProvider{
+    //    static var previews: some View{
+    //        ContainerView().edgesIgnoringSafeArea(.all)
+    //    }
+    //    struct ContainerView: UIViewControllerRepresentable{
+    //
+    //        let tabBar = MainTabBarContreller
+    //    }
+    //
+    //}
 }
