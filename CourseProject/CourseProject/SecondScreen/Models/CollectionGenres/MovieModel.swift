@@ -5,8 +5,8 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct MovieModel: Codable {
+// MARK: - MovieModel
+struct MovieModel: Decodable, Hashable {
     let page: Int
     let results: [Result]
     let totalPages, totalResults: Int
@@ -19,7 +19,7 @@ struct MovieModel: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Result: Decodable, Hashable {
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
@@ -46,12 +46,26 @@ struct Result: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        adult = try values.decodeIfPresent(Bool.self, forKey: .adult)!
+//        backdropPath = try values.decodeIfPresent(String.self, forKey: .backdropPath)!
+//        genreIDS = try values.decodeIfPresent([Int].self, forKey: .genreIDS)!
+//        id = try values.decodeIfPresent(Int.self, forKey: .id)!
+//        let originalLanguage = try values.nestedContainer(keyedBy: OriginalLanguage.self, forKey: .originalLanguage)
+//
+//    }
+
 }
 
-enum OriginalLanguage: String, Codable {
+enum OriginalLanguage: String, Decodable, Hashable {
     case en = "en"
     case es = "es"
+    case fr = "fr"
     case ja = "ja"
-    case te = "te"
+    
 }
-
+//extension OriginalLanguage: CodingKey{
+//    
+//    
+//}

@@ -5,6 +5,10 @@ import UIKit
 
 
 class UserCellSecond: UICollectionViewCell, SelfConfiguringCell{
+    func configure(with result: Result) {
+        
+    }
+    
     
     static var reuseId: String = "UserCellSecond"
     
@@ -28,9 +32,7 @@ class UserCellSecond: UICollectionViewCell, SelfConfiguringCell{
         friendImageView.frame = self.bounds
         friendImageView.backgroundColor = .green
     }
-    func configure(with intValue: Int){
-        print("kjkjhkjh")
-    }
+    
     
 }
 

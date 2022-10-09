@@ -14,21 +14,24 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
         super.init(frame: frame)
         
         backgroundColor = .blue
-        //setupConstrains()
         self.layer.cornerRadius = 15
         self.clipsToBounds = true
+    
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func setupConstrains(){
+    func configure(with result: Result){
         friendImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(friendImageView)
         friendImageView.frame = self.bounds
         friendImageView.backgroundColor = .green
+        friendImageView.clipsToBounds = true
+        friendImageView.contentMode = .scaleAspectFit
+        friendImageView.image = UIImage(named: result.posterPath)
     }
-    func configure(with intValue: Int){
+    func anyFunc(with intValue: Int){
         print("kjkjhkjh")
     }
     

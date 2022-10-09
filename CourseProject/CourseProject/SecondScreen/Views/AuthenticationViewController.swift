@@ -7,6 +7,10 @@ class AuthenticationViewController: UIViewController {
     
     var collectionView: UICollectionView!
     
+    
+    var sections = GettingData.shared.requestData
+
+    
     enum SectionKind: Int, CaseIterable{
         case list, grid
         var columnCount: Int {
@@ -21,11 +25,14 @@ class AuthenticationViewController: UIViewController {
     }
   
     var dataSource: UICollectionViewDiffableDataSource<SectionKind, Int>!
+    var dataSourceNext: UICollectionViewDiffableDataSource<MovieModel, Result>!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //GettingData.shared.createListMovie()
         setupCollectionView()
+        //print(section)
         
     }
     
@@ -33,53 +40,71 @@ class AuthenticationViewController: UIViewController {
     func setupCollectionView(){
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
         collectionView.register(UserCellSecond.self, forCellWithReuseIdentifier: UserCellSecond.reuseId)
-        setupDataSource()
-        reloadData()
+        //setupDataSource()
+        //reloadData()
         view.addSubview(collectionView)
-        //        collectionView.delegate = self
-        //        collectionView.dataSource = self
-        
+    
     }
     
-    func configure<T:SelfConfiguringCell>(cellType: T.Type, with intValue: Int, for indexPath: IndexPath)->T{
+    
+    func configure<T:SelfConfiguringCell>(cellType: T.Type, with result: Result, for indexPath: IndexPath)->T{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else{
-            return fatalError("Error \(cellType)") as! T}
+            fatalError("Unable to dequeu \(cellType)")
+        }
+        cell.configure(with: result)
         return cell
     }
     
     
     
     
+//
+//    private func setupDataSource(){
+//        dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView, cellProvider: {(collectionView, indexPath, intValue)->UICollectionViewCell?  in
+//            let section = SectionKind(rawValue: indexPath.section)!
+//            switch section {
+//            case .list:
+//                return self.configure(cellType: UserCell.self, with: intValue, for: indexPath)
+//            case .grid:
+//                return self.configure(cellType: UserCellSecond.self, with: intValue, for: indexPath)
+//            }
+//
+//        })
+//    }
+////!!!!!!!!!!!!
+//    private func setupDataSourceData(){
+//        dataSourceNext = UICollectionViewDiffableDataSource<MovieModel, Result>(collectionView: collectionView)
+//        { (collectionView, indexPath, result) -> UICollectionViewCell? in
+//            switch self.sections[indexPath.section].type{
+//            default:
+//                return self.configure(cellType: UserCell.self, with: result, for: indexPath)
+//            }
+//        }
+//    }
     
     
     
-    private func setupDataSource(){
-        dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView, cellProvider: {(collectionView, indexPath, intValue)->UICollectionViewCell?  in
-            let section = SectionKind(rawValue: indexPath.section)!
-            switch section {
-            case .list:
-                return self.configure(cellType: UserCell.self, with: intValue, for: indexPath)
-            case .grid:
-                return self.configure(cellType: UserCellSecond.self, with: intValue, for: indexPath)
-            }
-            
-        })
+    func reloadDataSections(){
+        var snapshots = NSDiffableDataSourceSnapshot<MovieModel, Result>()
+        snapshots.appendSections(sections)
+       
+        
     }
     
-    func reloadData(){
-        var snapShot = NSDiffableDataSourceSnapshot<SectionKind, Int>()
-        let itemPerSection = 12
-        SectionKind.allCases.forEach { sectionKind in
-            let itemOffSet = sectionKind.columnCount * itemPerSection
-            let itemUpperBound = itemOffSet + itemPerSection
-            snapShot.appendSections([sectionKind])
-            snapShot.appendItems(Array(itemOffSet..<itemUpperBound))
-        }
-        dataSource.apply(snapShot, animatingDifferences: false)
-    }
+    
+//    func reloadData(){
+//        var snapShot = NSDiffableDataSourceSnapshot<SectionKind, Int>()
+//        let itemPerSection = 12
+//        SectionKind.allCases.forEach { sectionKind in
+//            let itemOffSet = sectionKind.columnCount * itemPerSection
+//            let itemUpperBound = itemOffSet + itemPerSection
+//            snapShot.appendSections([sectionKind])
+//            snapShot.appendItems(Array(itemOffSet..<itemUpperBound))
+//        }
+//        dataSource.apply(snapShot, animatingDifferences: false)
+//    }
     
     
     
