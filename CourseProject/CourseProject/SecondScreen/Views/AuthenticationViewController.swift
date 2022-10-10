@@ -7,43 +7,33 @@ class AuthenticationViewController: UIViewController {
     
     var collectionView: UICollectionView!
     
-    
-    var sections = GettingData.shared.requestData
-
-    
-    enum SectionKind: Int, CaseIterable{
-        case list, grid
-        var columnCount: Int {
-            switch self {
-            case .list:
-                return 2
-            case .grid:
-                return 3
-            }
+    var sections: [Result] = [] {
+        didSet {
+            print(sections)
         }
-     
     }
   
-    var dataSource: UICollectionViewDiffableDataSource<SectionKind, Int>!
     var dataSourceNext: UICollectionViewDiffableDataSource<MovieModel, Result>!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //GettingData.shared.createListMovie()
         setupCollectionView()
-        //print(section)
-        
+       // print(sections)
+        GettingData.shared.createListMovie { value in
+            self.sections = value
+        }
+        //print(sections)
     }
     
     
     func setupCollectionView(){
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
-        collectionView.register(UserCellSecond.self, forCellWithReuseIdentifier: UserCellSecond.reuseId)
-        //setupDataSource()
-        //reloadData()
+        //collectionView.register(UserCellSecond.self, forCellWithReuseIdentifier: UserCellSecond.reuseId)
+//        setupDataSourceData()
+//        reloadDataSections()
         view.addSubview(collectionView)
     
     }
@@ -57,27 +47,11 @@ class AuthenticationViewController: UIViewController {
         return cell
     }
     
-    
-    
-    
-//
-//    private func setupDataSource(){
-//        dataSource = UICollectionViewDiffableDataSource<SectionKind, Int>(collectionView: collectionView, cellProvider: {(collectionView, indexPath, intValue)->UICollectionViewCell?  in
-//            let section = SectionKind(rawValue: indexPath.section)!
-//            switch section {
-//            case .list:
-//                return self.configure(cellType: UserCell.self, with: intValue, for: indexPath)
-//            case .grid:
-//                return self.configure(cellType: UserCellSecond.self, with: intValue, for: indexPath)
-//            }
-//
-//        })
-//    }
-////!!!!!!!!!!!!
+
 //    private func setupDataSourceData(){
 //        dataSourceNext = UICollectionViewDiffableDataSource<MovieModel, Result>(collectionView: collectionView)
 //        { (collectionView, indexPath, result) -> UICollectionViewCell? in
-//            switch self.sections[indexPath.section].type{
+//            switch self.sections[indexPath.section].results.first?.genreIDS{
 //            default:
 //                return self.configure(cellType: UserCell.self, with: result, for: indexPath)
 //            }
@@ -86,25 +60,29 @@ class AuthenticationViewController: UIViewController {
     
     
     
-    func reloadDataSections(){
-        var snapshots = NSDiffableDataSourceSnapshot<MovieModel, Result>()
-        snapshots.appendSections(sections)
-       
-        
-    }
-    
-    
-//    func reloadData(){
-//        var snapShot = NSDiffableDataSourceSnapshot<SectionKind, Int>()
-//        let itemPerSection = 12
-//        SectionKind.allCases.forEach { sectionKind in
-//            let itemOffSet = sectionKind.columnCount * itemPerSection
-//            let itemUpperBound = itemOffSet + itemPerSection
-//            snapShot.appendSections([sectionKind])
-//            snapShot.appendItems(Array(itemOffSet..<itemUpperBound))
+//    func reloadDataSections(){
+//        var snapshots = NSDiffableDataSourceSnapshot<MovieModel, Result>()
+//        snapshots.appendSections(sections)
+//        for section in sections {
+//            snapshots.appendItems(section.results, toSection: section)
 //        }
-//        dataSource.apply(snapShot, animatingDifferences: false)
+//        dataSourceNext.apply(snapshots)
 //    }
+//
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -141,19 +119,7 @@ class AuthenticationViewController: UIViewController {
     
 }
 
-//extension AuthenticationViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 24
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-//        cell.backgroundColor = .blue
-//        return cell
-//    }
-//    
-//    
-//}
+
 
 extension AuthenticationViewController{
     
@@ -178,20 +144,5 @@ extension AuthenticationViewController{
     //
     //}
     
-    
-    
-    
-    //
-    //import SwiftUI
-    //
-    //struct FlowProvider: PreviewProvider{
-    //    static var previews: some View{
-    //        ContainerView().edgesIgnoringSafeArea(.all)
-    //    }
-    //    struct ContainerView: UIViewControllerRepresentable{
-    //
-    //        let tabBar = MainTabBarContreller
-    //    }
-    //
-    //}
+
 }

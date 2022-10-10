@@ -46,15 +46,6 @@ struct Result: Decodable, Hashable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-//    init(from decoder: Decoder) throws {
-//        let values = try decoder.container(keyedBy: CodingKeys.self)
-//        adult = try values.decodeIfPresent(Bool.self, forKey: .adult)!
-//        backdropPath = try values.decodeIfPresent(String.self, forKey: .backdropPath)!
-//        genreIDS = try values.decodeIfPresent([Int].self, forKey: .genreIDS)!
-//        id = try values.decodeIfPresent(Int.self, forKey: .id)!
-//        let originalLanguage = try values.nestedContainer(keyedBy: OriginalLanguage.self, forKey: .originalLanguage)
-//
-//    }
 
 }
 
@@ -65,7 +56,3 @@ enum OriginalLanguage: String, Decodable, Hashable {
     case ja = "ja"
     
 }
-//extension OriginalLanguage: CodingKey{
-//    
-//    
-//}
