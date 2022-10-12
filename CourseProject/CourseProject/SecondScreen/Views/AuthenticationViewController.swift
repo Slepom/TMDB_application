@@ -84,18 +84,7 @@ class AuthenticationViewController: UIViewController {
     
      func createFeaturedSection(using section: MovieModel) -> NSCollectionLayoutSection{
         
-//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-//
-//        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-//
-//        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1))
-//
-//        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
-//         layoutGroup.interItemSpacing = .fixed(CGFloat(10))
-//        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-         //layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
-         
-         
+
          
          
                  let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1.0))
@@ -112,29 +101,7 @@ class AuthenticationViewController: UIViewController {
                 section.orthogonalScrollingBehavior = .continuous
         return section
         
-        
-        
-        
-        
-        
-        
-//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1.0))
-//
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.5))
-//        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
-//        let spacing = CGFloat(10)
-//
-//        group.interItemSpacing = .fixed(spacing)
-//        let section = NSCollectionLayoutSection(group: group)
-//        section.interGroupSpacing = spacing
-//        section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 10, bottom: 10, trailing: 10)
-//       section.orthogonalScrollingBehavior = .continuous
-//        let layout = UICollectionViewCompositionalLayout(section: section)
-//        let config = UICollectionViewCompositionalLayoutConfiguration()
-//        //config.interSectionSpacing = 30
-//        layout.configuration = config
-//
+
         
     }
     
@@ -146,29 +113,3 @@ class AuthenticationViewController: UIViewController {
 }
 
 
-
-extension AuthenticationViewController{
-    
-    //    private func createLayout() -> UICollectionViewLayout{
-    //
-    //
-    ////
-    //        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-    //
-    //        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-    //        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.5))
-    //        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-    //        let spacing = CGFloat(20)
-    //
-    //        group.interItemSpacing = .fixed(spacing)
-    //        let section = NSCollectionLayoutSection(group: group)
-    //        section.interGroupSpacing = spacing
-    //        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: spacing, bottom: 0, trailing: spacing)
-    //        let layout = UICollectionViewCompositionalLayout(section: section)
-    //
-    //        return layout
-    //
-    //}
-    
-
-}

@@ -19,6 +19,7 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
         //imageView.backgroundColor = .green
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 30
         
         let stackView = UIStackView(arrangedSubviews: [name, imageView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
