@@ -32,6 +32,7 @@ class AuthenticationViewController: UIViewController {
             self?.arrayResult = dataResult
             self?.reloadDataSectionsTest()
         }
+
       
     }
     func setupCollectionView(){
@@ -116,8 +117,6 @@ class AuthenticationViewController: UIViewController {
             let section = self.arrayGenre[sectionIndex]
             let result = self.arrayResult[sectionIndex]
             switch section.id{
-            case 28 : return self.createFeaturedSection(using: result)
-            case 12 : return self.createFeaturedSection(using: result)
             default:
             return self.createFeaturedSection(using: result)
             }

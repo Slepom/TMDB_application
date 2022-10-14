@@ -5,8 +5,8 @@
 
 import Foundation
 
-// MARK: - MovieModel
-struct MovieModel: Decodable, Hashable {
+// MARK: - Welcome
+struct MovieModel: Codable, Hashable {
     let page: Int
     let results: [Result]
     let totalPages, totalResults: Int
@@ -19,7 +19,7 @@ struct MovieModel: Decodable, Hashable {
 }
 
 // MARK: - Result
-struct Result: Decodable, Hashable {
+struct Result: Codable, Hashable {
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
@@ -46,13 +46,12 @@ struct Result: Decodable, Hashable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-
 }
 
-enum OriginalLanguage: String, Decodable, Hashable {
+enum OriginalLanguage: String, Codable, Hashable {
     case en = "en"
-    case es = "es"
     case fr = "fr"
     case ja = "ja"
-    
+    case te = "te"
 }
+
