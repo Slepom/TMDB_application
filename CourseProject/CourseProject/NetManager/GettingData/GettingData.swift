@@ -62,48 +62,41 @@ class GettingData{
             }
             
         }
+}
+    func useThis(_ idGenres: Int ,_ complitionaHandler: @escaping ([Result]) -> Void){
+        getGenres { arrayGenres in
+
+            let idGenres = arrayGenres.first?.id
+            let request = AF.request("https://api.themoviedb.org/3/discover/movie?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=\(String(describing: idGenres))&with_watch_monetization_types=flatrate", method: .get)
+            request.responseDecodable(of: MovieModel.self) { response in
+                do {
+                    let result = try response.result.get().results
+                    complitionaHandler(result)
+                    print("-------------------------------------\(result)")
+                }
+                catch{
+                    print("!!!!!!!!!\(error)")
+                }
+                
+            }
+
+            
+            
+            
+            
+        }
+        
+        
         
         
     }
     
     
-//    func createViewData(_ complitionaHandler: @escaping ([Int:Result]) -> Void){
-//        getGenres { arrayGenre in
-//            var dict: [Int:Result] = [:]
-//            for genres in arrayGenre {
-//
-//                switch genres.id{
-//                case let typeGenre:
-//                    let request = AF.request("https://api.themoviedb.org/3/discover/movie?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=\(String(typeGenre))&with_watch_monetization_types=flatrate", method: .get)
-//                    request.responseDecodable(of: MovieModel.self) { response in
-//
-//                        do {
-//                            let result = try response.result.get().results
-//                        //    complitionaHandler(dict[typeGenre]: result)
-//                            print("?????????????????????????????????????????\(result)")
-//                        }
-//                        catch{
-//                            print("!!!!!!!!!\(error)")
-//                        }
-//
-//                    }
-//                }
-//
-//            }
-//
-//        }
-//
-//    }
     
     
     
     
     
     
-    
-    
-    
-    
-    
-    
+   
 }

@@ -6,9 +6,9 @@ class AuthenticationViewController: UIViewController {
     
     //var dataSource: UICollectionViewDiffableDataSource<MovieModel, Result>!
     //var dataSourceGenre: UICollectionViewDiffableDataSource<GenreModel, Genre>!
-    var dataSourceTest: UICollectionViewDiffableDataSource<Genre, Result>!
+    typealias DataSourceTest = UICollectionViewDiffableDataSource<Genre, Result>
     var collectionView: UICollectionView!
-    
+   private lazy var dataSource: UICollectionViewDiffableDataSource = setupDataSourceTest()
     //var sections: [MovieModel] = []
     
     var arrayGenre: [Genre] = []
@@ -23,17 +23,15 @@ class AuthenticationViewController: UIViewController {
 //            self?.sections = [dataMovieModel]
 //            self?.reloadDataSections()
 //        }
-        setupDataSourceTest()
         GettingData.shared.getGenres { [weak self] dataGenreModel in
             self?.arrayGenre = dataGenreModel
-
-        }
-        GettingData.shared.createResulTest { [weak self] dataResult in
-            self?.arrayResult = dataResult
             self?.reloadDataSectionsTest()
-        }
 
-      
+        }
+//        GettingData.shared.createResulTest { [weak self] dataResult in
+//            self?.arrayResult = dataResult
+//            self?.reloadDataSectionsTest()
+//        }
     }
     func setupCollectionView(){
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
@@ -62,25 +60,48 @@ class AuthenticationViewController: UIViewController {
 //            }
 //        }
 //    }
-    func setupDataSourceTest(){
-        dataSourceTest = UICollectionViewDiffableDataSource<Genre, Result>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, result) -> UICollectionViewCell? in
+    
+    
+    
+    //!!!!!!  Вот тут сделать запрос в сеть по типу (func(Int, fsfs)), где Int это arrayGenre[indexPath].id
+    
+    func setupDataSourceTest()-> DataSourceTest{
+      let dataSourceTest = UICollectionViewDiffableDataSource<Genre, Result>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, result) -> UICollectionViewCell? in
+          let section = self.arrayGenre[indexPath.section].id
             
-            switch self.arrayGenre[indexPath.section].name{
+            switch section{
+                
             default:
-                return self.configure(cellType: UserCell.self, with: result, for: indexPath)
+                 GettingData.shared.useThis(section) { arrayReslut in
+                     self.arrayResult = arrayReslut
+                }
+                return self.configure(cellType: UserCell.self, with: self.arrayResult[indexPath.section], for: indexPath)
+
+                
             }
             
+          
+            
+//
+//            switch self.arrayGenre[indexPath.section].id{
+//            default:
+//                return self.configure(cellType: UserCell.self, with: result, for: indexPath)
+//            }
+//
         })
         
-        
+        return dataSourceTest
     }
+    
     func reloadDataSectionsTest(){
         var snapshots = NSDiffableDataSourceSnapshot<Genre, Result>()
         snapshots.appendSections(arrayGenre)
-      
-        snapshots.appendItems(arrayResult, toSection: arrayGenre.first)
 
-        dataSourceTest.apply(snapshots)
+        arrayGenre.forEach { section in
+            snapshots.appendItems(arrayResult, toSection: section)
+        }
+
+        dataSource.apply(snapshots,animatingDifferences: true)
     }
 
     
@@ -115,10 +136,9 @@ class AuthenticationViewController: UIViewController {
             //let section = self.sections[sectionIndex]
 //
             let section = self.arrayGenre[sectionIndex]
-            let result = self.arrayResult[sectionIndex]
-            switch section.id{
+            switch section{
             default:
-            return self.createFeaturedSection(using: result)
+                return self.createFeaturedSection(using: self.arrayResult[sectionIndex])
             }
             
             

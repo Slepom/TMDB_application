@@ -62,8 +62,8 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "AuthenticationViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -78,10 +78,10 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "configure(cellType:with:for:)"
-            landmarkType = "7">
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "AuthenticationViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,8 +94,8 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "AuthenticationViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -104,7 +104,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "73BB9A5F-5F29-4E9B-A41C-C5A3A58ECAF8"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
@@ -116,67 +116,7 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "73BB9A5F-5F29-4E9B-A41C-C5A3A58ECAF8 - cf1760f3776ab2c0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CourseProject.AuthenticationViewController.sections.getter : Swift.Array&lt;CourseProject.MovieModel&gt;"
-                  moduleName = "CourseProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "90">
-               </Location>
-               <Location
-                  uuid = "73BB9A5F-5F29-4E9B-A41C-C5A3A58ECAF8 - f65d36a265294284"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CourseProject.AuthenticationViewController.sections.setter : Swift.Array&lt;CourseProject.MovieModel&gt;"
-                  moduleName = "CourseProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  uuid = "73BB9A5F-5F29-4E9B-A41C-C5A3A58ECAF8 - 16e62c7e65f5f6d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CourseProject.AuthenticationViewController.sections.modify : Swift.Array&lt;CourseProject.MovieModel&gt;"
-                  moduleName = "CourseProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "73BB9A5F-5F29-4E9B-A41C-C5A3A58ECAF8 - 4f30e773bad60492"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CourseProject.AuthenticationViewController.sections.modify : Swift.Array&lt;CourseProject.MovieModel&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "CourseProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  uuid = "73BB9A5F-5F29-4E9B-A41C-C5A3A58ECAF8 - 69a89fb42cae41ec"
+                  uuid = "73BB9A5F-5F29-4E9B-A41C-C5A3A58ECAF8 - 69a89fb42cae4189"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -186,12 +126,12 @@
                   urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "183">
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "193">
                </Location>
                <Location
-                  uuid = "73BB9A5F-5F29-4E9B-A41C-C5A3A58ECAF8 - e9f26b932ff22e3a"
+                  uuid = "73BB9A5F-5F29-4E9B-A41C-C5A3A58ECAF8 - e9f26b932ff22e5f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -201,9 +141,9 @@
                   urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "11"
-                  endingLineNumber = "11"
-                  offsetFromSymbolStart = "140">
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "150">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -218,8 +158,8 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "setupCollectionView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,8 +174,8 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "setupCollectionView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,9 +190,9 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "setupCollectionView()"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "configure(cellType:with:for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -260,7 +200,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C3C7BA52-35AA-41A5-B97B-77F3A9CCB8C6"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
@@ -291,22 +231,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3AD40DFF-B165-47FC-916D-C16BCD963FCA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C053703A-77BE-4F84-920D-48B44A0EC0F3"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -330,9 +254,89 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "createCompositionalLayout()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F3CD1D9-EC60-46D8-BCEF-D0DD7BC60A0A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B00570D-9D58-4C31-AFD3-F2FB8CD062E8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "setupCollectionView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FF3F8AE-7373-4206-8EDC-2DCCF5145BDD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "setupDataSourceTest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F8EB1E7-8573-4B4F-A716-9FD56B430548"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "setupDataSourceTest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A36B92D3-9A15-49DE-889E-E47C7A026CB9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
