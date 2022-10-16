@@ -8,30 +8,36 @@ class AuthenticationViewController: UIViewController {
     //var dataSourceGenre: UICollectionViewDiffableDataSource<GenreModel, Genre>!
     typealias DataSourceTest = UICollectionViewDiffableDataSource<Genre, Result>
     var collectionView: UICollectionView!
-    private lazy var dataSource: UICollectionViewDiffableDataSource = setupDataSourceTest()
+    private var dataSource: UICollectionViewDiffableDataSource<Genre, Result>?
     //var sections: [MovieModel] = []
     
     var arrayGenre: [Genre] = []
     
-    var arrayResult: [Result] = []
+    var arrayResult: [Result] = []{
+        didSet{
+            self.reloadDataSectionsTest()
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupCollectionView()
-        //setupDataSourceData()
+        setupDataSourceTest()
+        
+        //self.setupDataSourceTest()
         //        GettingData.shared.createListMovie { [weak self] dataMovieModel in
         //            self?.sections = [dataMovieModel]
         //            self?.reloadDataSections()
         //        }
+        
         GettingData.shared.getGenres { [weak self] dataGenreModel in
             self?.arrayGenre = dataGenreModel
-            self?.reloadDataSectionsTest()
         }
-        //        GettingData.shared.createResulTest { [weak self] dataResult in
-        //            self?.arrayResult = dataResult
-        //            self?.reloadDataSectionsTest()
-        //        }
+                GettingData.shared.createResulTest { [weak self] dataResult in
+                    self?.arrayResult = dataResult
+                    self?.reloadDataSectionsTest()
+                }
     }
     func setupCollectionView(){
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
@@ -65,13 +71,14 @@ class AuthenticationViewController: UIViewController {
     
     //!!!!!!  Вот тут сделать запрос в сеть по типу (func(Int, fsfs)), где Int это arrayGenre[indexPath].id
     
-    func setupDataSourceTest()-> DataSourceTest{
+    func setupDataSourceTest(){
         let dataSourceTest = UICollectionViewDiffableDataSource<Genre, Result>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, result) -> UICollectionViewCell? in
             // let section = self.arrayGenre[indexPath.section].id
-
+            print("fsdfsfsf")
             let section = self.arrayGenre[indexPath.section].id
             GettingData.shared.useThis(section) { arrayReslut in
                 self.arrayResult = arrayReslut
+                
             }
             return self.configure(cellType: UserCell.self, with: self.arrayResult[indexPath.section], for: indexPath)
             
@@ -98,19 +105,20 @@ class AuthenticationViewController: UIViewController {
             //            }
             //
         })
-        
-        return dataSourceTest
+        self.dataSource = dataSourceTest
     }
     
     func reloadDataSectionsTest(){
         var snapshots = NSDiffableDataSourceSnapshot<Genre, Result>()
         snapshots.appendSections(arrayGenre)
         
+        // snapshots.appendItems(arrayResult)
+        
         arrayGenre.forEach { section in
             snapshots.appendItems(arrayResult, toSection: section)
         }
         
-        dataSource.apply(snapshots,animatingDifferences: true)
+        dataSource?.apply(snapshots,animatingDifferences: true)
     }
     
     
@@ -149,7 +157,7 @@ class AuthenticationViewController: UIViewController {
             switch section{
                 
             default:
-                return self.createFeaturedSection(using: section)
+                return self.createFeaturedSection(using: self.arrayResult[sectionIndex])
             }
             
             
@@ -173,7 +181,7 @@ class AuthenticationViewController: UIViewController {
     
     
     
-    func createFeaturedSection(using section: Genre) -> NSCollectionLayoutSection{
+    func createFeaturedSection(using section: Result) -> NSCollectionLayoutSection{
         
         
         
