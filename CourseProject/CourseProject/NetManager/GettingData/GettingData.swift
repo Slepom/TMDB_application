@@ -80,7 +80,9 @@ class GettingData{
                 
             }
 //,msn,fknsd,mnfsdfkmnsa,fmnas,mfna,smnf,as
-            
+            //аыавфыав
+            //аыфваыф/
+            //фыаа
             
             
             
