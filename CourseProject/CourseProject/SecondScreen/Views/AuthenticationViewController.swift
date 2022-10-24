@@ -9,35 +9,24 @@ class AuthenticationViewController: UIViewController {
     typealias DataSourceTest = UICollectionViewDiffableDataSource<Genre, Result>
     var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Genre, Result>?
-    //var sections: [MovieModel] = []
+ 
+   
+    var dictFinal: [Genre:[Result]] = [:]
     
-    var arrayGenre: [Genre] = []
-    
-    var dictFinal: [Genre:[Result]] = GettingData.shared.finalTest { anyArray in
-        
-    }
-    
-    var arrayResult: [Result] = []{
-        didSet{
-            self.reloadDataSectionsTest()
-        }
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupDataSourceTest()
+       
+        //!!!!!!!!!!
+        GettingData.shared.finalTest({ [weak self] arrayResult in
+            self?.dictFinal = arrayResult
+            self?.reloadDataSectionsTest()
         
-      
+        })
         
-        GettingData.shared.getGenres { [weak self] dataGenreModel in
-            self?.arrayGenre = dataGenreModel
-        }
-                GettingData.shared.createResulTest { [weak self] dataResult in
-                    self?.arrayResult = dataResult
-                    self?.reloadDataSectionsTest()
-                }
+
     }
     func setupCollectionView(){
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
@@ -57,117 +46,50 @@ class AuthenticationViewController: UIViewController {
         return cell
     }
     
-    //    func setupDataSourceData(){
-    //        dataSource = UICollectionViewDiffableDataSource<MovieModel, Result>(collectionView: collectionView)
-    //        { (collectionView, indexPath, result) -> UICollectionViewCell? in
-    //            switch self.sections[indexPath.section].page{
-    //            default:
-    //                return self.configure(cellType: UserCell.self, with: result, for: indexPath)
-    //            }
-    //        }
-    //    }
-    
-    
-    
-    //!!!!!!  Вот тут сделать запрос в сеть по типу (func(Int, fsfs)), где Int это arrayGenre[indexPath].id
+
     
     func setupDataSourceTest(){
-        let dataSourceTest = UICollectionViewDiffableDataSource<Genre, Result>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, result) -> UICollectionViewCell? in
-            // let section = self.arrayGenre[indexPath.section].id
-            print("fsdfsfsf")
-            let section = self.arrayGenre[indexPath.section].id
-            GettingData.shared.useThis(section) { arrayReslut in
-                self.arrayResult = arrayReslut
-                
+        dataSource = UICollectionViewDiffableDataSource<Genre, Result>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, result) -> UICollectionViewCell? in
+         
+            let section = Array(self.dictFinal)[indexPath.section]
+            
+            switch section.key{
+            default:
+                return self.configure(cellType: UserCell.self, with: section.value[indexPath.row], for: indexPath)
+
             }
-            return self.configure(cellType: UserCell.self, with: self.arrayResult[indexPath.section], for: indexPath)
             
             
-            
-            
-            //          switch section{
-            //
-            //            default:
-            //                 GettingData.shared.useThis(section) { arrayReslut in
-            //                     self.arrayResult = arrayReslut
-            //                }
-            //              return self.configure(cellType: UserCell.self, with: self.arrayResult[indexPath.section], for: indexPath)
-            //
-            //
-            //            }
-            
-            
-            
-            //
-            //            switch self.arrayGenre[indexPath.section].id{
-            //            default:
-            //                return self.configure(cellType: UserCell.self, with: result, for: indexPath)
-            //            }
-            //
         })
-        self.dataSource = dataSourceTest
+       
     }
     
     func reloadDataSectionsTest(){
         var snapshots = NSDiffableDataSourceSnapshot<Genre, Result>()
-        snapshots.appendSections(arrayGenre)
+        snapshots.appendSections(Array(dictFinal.keys))
         
-        // snapshots.appendItems(arrayResult)
-        
-        arrayGenre.forEach { section in
-            snapshots.appendItems(arrayResult, toSection: section)
+        for result in dictFinal.keys{
+            snapshots.appendItems(dictFinal[result]!, toSection: result)
         }
         
-        dataSource?.apply(snapshots,animatingDifferences: true)
+        
+        dataSource?.apply(snapshots,animatingDifferences: false)
     }
     
-    
-    
-    
-    
-    //    func reloadDataSections(){
-    //        var snapshots = NSDiffableDataSourceSnapshot<MovieModel, Result>()
-    //        snapshots.appendSections(sections)
-    //        for section in sections {
-    //            snapshots.appendItems(section.results, toSection: section)
-    //        }
-    //        dataSource.apply(snapshots)
-    //    }
-    
-    //    func reloadDataGenre(){
-    //        var snapshots = NSDiffableDataSourceSnapshot<GenreModel, Genre>()
-    //        snapshots.appendSections(genre)
-    //        for section in genre {
-    //            snapshots.appendItems(section.genres, toSection: section)
-    //        }
-    //        dataSourceGenre.apply(snapshots)
-    //    }
-    
-    
-    
+
     
     
     
     func createCompositionalLayout() -> UICollectionViewLayout{
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
-            //let section = self.sections[sectionIndex]
-            //
-            let section = self.arrayGenre[sectionIndex]
+           
+            let section = Array(self.dictFinal)[sectionIndex]
             
-            switch section{
+            switch section.key{
                 
             default:
-                return self.createFeaturedSection(using: self.arrayResult[sectionIndex])
+                return self.createFeaturedSection(using: section.key)
             }
-            
-            
-            
-            
-            //            switch section.results.first{
-            //            default:
-            //               return self.createFeaturedSection(using: section)
-            //            }
-            //        }
             
         }
         let config = UICollectionViewCompositionalLayoutConfiguration()
@@ -181,11 +103,8 @@ class AuthenticationViewController: UIViewController {
     
     
     
-    func createFeaturedSection(using section: Result) -> NSCollectionLayoutSection{
-        
-        
-        
-        
+    func createFeaturedSection(using section: Genre) -> NSCollectionLayoutSection{
+
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1.0))
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -199,16 +118,9 @@ class AuthenticationViewController: UIViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 10, bottom: 10, trailing: 10)
         section.orthogonalScrollingBehavior = .continuous
         return section
-        
-        
-        
+   
     }
-    
-    
-    
-    
-    
-    
+       
 }
 
 

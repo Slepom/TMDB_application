@@ -88,18 +88,19 @@ class GettingData{
         
     }
     
-    func finalTest(_ complitionaHandler: @escaping ([Result])-> Void) -> [Genre:[Result]]{
+    func finalTest(_ complitionaHandler: @escaping ([Genre:[Result]])-> Void){
         var returnDictionary: [Genre:[Result]] = [:]
         getGenres { arrayGenre in
             
-            for (index,id) in arrayGenre.enumerated(){
-                let request = AF.request("https://api.themoviedb.org/3/discover/movie?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=\(String(describing: id.id))&with_watch_monetization_types=flatrate", method: .get)
+            for genre in arrayGenre{
+                let request = AF.request("https://api.themoviedb.org/3/discover/movie?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=\(String(describing: genre.id))&with_watch_monetization_types=flatrate", method: .get)
                 request.responseDecodable(of: MovieModel.self) { response in
                     do {
                         let result = try response.result.get().results
-                        complitionaHandler(result)
-                        returnDictionary[arrayGenre[index]] = result
-                       // print("---------\(id.id)----------------------------\(result)")
+                        returnDictionary[genre] = result
+                        complitionaHandler(returnDictionary)
+
+                       //print("---------\(genre.name)----------------------------\(result)")
                     }
                     catch{
                         print("!!!!!!!!!\(error)")
@@ -111,7 +112,6 @@ class GettingData{
           
         }
         
-        return returnDictionary
     }
     
     
