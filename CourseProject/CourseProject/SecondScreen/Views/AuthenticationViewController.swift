@@ -13,6 +13,10 @@ class AuthenticationViewController: UIViewController {
     
     var arrayGenre: [Genre] = []
     
+    var dictFinal: [Genre:[Result]] = GettingData.shared.finalTest { anyArray in
+        
+    }
+    
     var arrayResult: [Result] = []{
         didSet{
             self.reloadDataSectionsTest()
@@ -25,11 +29,7 @@ class AuthenticationViewController: UIViewController {
         setupCollectionView()
         setupDataSourceTest()
         
-        //self.setupDataSourceTest()
-        //        GettingData.shared.createListMovie { [weak self] dataMovieModel in
-        //            self?.sections = [dataMovieModel]
-        //            self?.reloadDataSections()
-        //        }
+      
         
         GettingData.shared.getGenres { [weak self] dataGenreModel in
             self?.arrayGenre = dataGenreModel

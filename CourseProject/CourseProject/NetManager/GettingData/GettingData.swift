@@ -72,19 +72,14 @@ class GettingData{
                 do {
                     let result = try response.result.get().results
                     complitionaHandler(result)
-                    print("-------------------------------------\(result)")
+                    //print("-------------------------------------\(result)")
                 }
                 catch{
                     print("!!!!!!!!!\(error)")
                 }
                 
             }
-//,msn,fknsd,mnfsdfkmnsa,fmnas,mfna,smnf,as
-            //аыавфыав
-            //аыфваыф/
-            //фыаа
-            
-            
+
             
         }
         
@@ -104,7 +99,7 @@ class GettingData{
                         let result = try response.result.get().results
                         complitionaHandler(result)
                         returnDictionary[arrayGenre[index]] = result
-                        print("---------\(id.id)----------------------------\(result)")
+                       // print("---------\(id.id)----------------------------\(result)")
                     }
                     catch{
                         print("!!!!!!!!!\(error)")
