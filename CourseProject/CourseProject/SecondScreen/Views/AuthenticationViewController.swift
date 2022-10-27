@@ -23,7 +23,6 @@ class AuthenticationViewController: UIViewController {
         GettingData.shared.finalTest({ [weak self] arrayResult in
             self?.dictFinal = arrayResult
             self?.reloadDataSectionsTest()
-        
         })
         
 
@@ -52,13 +51,13 @@ class AuthenticationViewController: UIViewController {
         dataSource = UICollectionViewDiffableDataSource<Genre, Result>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, result) -> UICollectionViewCell? in
          
             let section = Array(self.dictFinal)[indexPath.section]
-            
-            switch section.key{
-            default:
-                return self.configure(cellType: UserCell.self, with: section.value[indexPath.row], for: indexPath)
-
-            }
-            
+            return self.configure(cellType: UserCell.self, with: section.value[indexPath.row], for: indexPath)
+//            switch section.key{
+//            default:
+//                return self.configure(cellType: UserCell.self, with: section.value[indexPath.row], for: indexPath)
+//
+//            }
+//
             
         })
        

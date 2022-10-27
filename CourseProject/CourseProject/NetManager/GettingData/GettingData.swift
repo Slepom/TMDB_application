@@ -9,7 +9,7 @@ class GettingData{
     private init(){}
     
     
-    
+    var networkDictionary: [Genre:[Result]] = [:]
     
     
     func getGenres(_ complitionHandler: @escaping ([Genre]) -> Void){
@@ -41,7 +41,7 @@ class GettingData{
                 //print("?????????????????????????????????????????\(result)")
             }
             catch{
-                print("!!!!!!!!!\(error)")
+                // print("!!!!!!!!!\(error)")
             }
             
         }
@@ -58,14 +58,14 @@ class GettingData{
                 //print("?????????????????????????????????????????\(result)")
             }
             catch{
-                print("!!!!!!!!!\(error)")
+                //print("!!!!!!!!!\(error)")
             }
             
         }
-}
+    }
     func useThis(_ idGenres: Int ,_ complitionaHandler: @escaping ([Result]) -> Void){
         getGenres { arrayGenres in
-
+            
             let idGenres = arrayGenres.first?.id
             let request = AF.request("https://api.themoviedb.org/3/discover/movie?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=\(String(describing: idGenres))&with_watch_monetization_types=flatrate", method: .get)
             request.responseDecodable(of: MovieModel.self) { response in
@@ -75,11 +75,11 @@ class GettingData{
                     //print("-------------------------------------\(result)")
                 }
                 catch{
-                    print("!!!!!!!!!\(error)")
+                    //print("!!!!!!!!!\(error)")
                 }
                 
             }
-
+            
             
         }
         
@@ -93,23 +93,23 @@ class GettingData{
         getGenres { arrayGenre in
             
             for genre in arrayGenre{
-                let request = AF.request("https://api.themoviedb.org/3/discover/movie?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=\(String(describing: genre.id))&with_watch_monetization_types=flatrate", method: .get)
+                let request = AF.request("https://api.themoviedb.org/3/discover/movie?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=\(genre.id)&with_watch_monetization_types=flatrate", method: .get)
                 request.responseDecodable(of: MovieModel.self) { response in
                     do {
                         let result = try response.result.get().results
                         returnDictionary[genre] = result
                         complitionaHandler(returnDictionary)
-
-                       //print("---------\(genre.name)----------------------------\(result)")
+                        
+                        //print("---------\(genre.name)----------------------------\(result)")
                     }
                     catch{
-                        print("!!!!!!!!!\(error)")
+                        //  print("!!!!!!!!!\(error)")
                     }
                     
                 }
                 
             }
-          
+            
         }
         
     }
@@ -119,5 +119,5 @@ class GettingData{
     
     
     
-   
+    
 }
