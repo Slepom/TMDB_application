@@ -99,7 +99,6 @@ class GettingData{
                         let result = try response.result.get().results
                         returnDictionary[genre] = result
                         complitionaHandler(returnDictionary)
-                        
                         //print("---------\(genre.name)----------------------------\(result)")
                     }
                     catch{
@@ -111,8 +110,12 @@ class GettingData{
             }
             
         }
-        
+
     }
+    
+ 
+    
+    
     
     
     

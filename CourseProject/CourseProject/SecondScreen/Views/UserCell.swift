@@ -13,15 +13,16 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        name.font = UIFont.preferredFont(forTextStyle: .title2)
+        name.font = UIFont.preferredFont(forTextStyle: .body)
         name.textColor = .label
         
         //imageView.backgroundColor = .green
         imageView.clipsToBounds = true
+        imageView.frame = self.bounds
         imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 15
+        imageView.layer.cornerRadius = 30
         //
-        let stackView = UIStackView(arrangedSubviews: [name, imageView])
+        let stackView = UIStackView(arrangedSubviews: [imageView, name])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         contentView.addSubview(stackView)
@@ -31,7 +32,7 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-        stackView.setCustomSpacing(10, after: name)
+        stackView.setCustomSpacing(10, after: imageView)
     }
     
     required init?(coder: NSCoder) {
@@ -41,8 +42,6 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
         name.text = result.title
         imageView.sd_setImage(with:(URL(string:"https://image.tmdb.org/t/p/original" + result.posterPath)) ,completed: nil)
     }
-    func anyFunc(with intValue: Int){
-        print("kjkjhkjh")
-    }
+    
     
 }

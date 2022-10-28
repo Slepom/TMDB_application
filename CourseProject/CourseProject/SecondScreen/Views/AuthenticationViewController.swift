@@ -4,8 +4,7 @@ import UIKit
 
 class AuthenticationViewController: UIViewController {
     
-    //var dataSource: UICollectionViewDiffableDataSource<MovieModel, Result>!
-    //var dataSourceGenre: UICollectionViewDiffableDataSource<GenreModel, Genre>!
+  
     typealias DataSourceTest = UICollectionViewDiffableDataSource<Genre, Result>
     var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<Genre, Result>?
@@ -50,8 +49,37 @@ class AuthenticationViewController: UIViewController {
     func setupDataSourceTest(){
         dataSource = UICollectionViewDiffableDataSource<Genre, Result>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, result) -> UICollectionViewCell? in
          
-            let section = Array(self.dictFinal)[indexPath.section]
-            return self.configure(cellType: UserCell.self, with: section.value[indexPath.row], for: indexPath)
+            let section = Array(self.dictFinal.keys)[indexPath.section]
+            switch section{
+            default:
+                return self.configure(cellType: UserCell.self, with: result, for: indexPath)
+            }
+            
+            
+            
+            
+            
+            
+//
+//           // let section = Array(self.dictFinal.keys)[indexPath.section]
+//            let sectionArray = [Genre](self.dictFinal.keys)
+//            let section = sectionArray[indexPath.section]
+//            let resultArray = [Result](self.dictFinal[section]!)
+//            let result = resultArray[indexPath.row]
+//            return self.configure(cellType: UserCell.self, with: result, for: indexPath)
+            
+            
+            
+            
+            
+            
+//            switch section{
+//            default:
+//                return self.configure(cellType: UserCell.self, with: self.dictFinal[section]![indexPath.row], for: indexPath)
+//            }
+            
+//            let item = Array(section)[indexPath.row]
+//            return self.configure(cellType: UserCell.self, with: item, for: indexPath)
 //            switch section.key{
 //            default:
 //                return self.configure(cellType: UserCell.self, with: section.value[indexPath.row], for: indexPath)
@@ -61,17 +89,24 @@ class AuthenticationViewController: UIViewController {
             
         })
        
-    }
-    
-    func reloadDataSectionsTest(){
-        var snapshots = NSDiffableDataSourceSnapshot<Genre, Result>()
-        snapshots.appendSections(Array(dictFinal.keys))
-        
-        for result in dictFinal.keys{
-            snapshots.appendItems(dictFinal[result]!, toSection: result)
+
         }
         
         
+        
+    
+    
+    func reloadDataSectionsTest(){
+        var snapshots = NSDiffableDataSourceSnapshot<Genre, Result>()
+        
+        let arrayGenre = Array(dictFinal.keys)
+        snapshots.appendSections(arrayGenre)
+     
+        
+        for genre in arrayGenre{
+            snapshots.appendItems(dictFinal[genre]!, toSection: genre)
+        }
+       
         dataSource?.apply(snapshots,animatingDifferences: false)
     }
     
@@ -83,12 +118,13 @@ class AuthenticationViewController: UIViewController {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
            
             let section = Array(self.dictFinal)[sectionIndex]
+            return self.createFeaturedSection(using: section.key)
             
-            switch section.key{
-                
-            default:
-                return self.createFeaturedSection(using: section.key)
-            }
+//            switch section.key{
+//
+//            default:
+//                return self.createFeaturedSection(using: section.key)
+//            }
             
         }
         let config = UICollectionViewCompositionalLayoutConfiguration()
@@ -120,6 +156,5 @@ class AuthenticationViewController: UIViewController {
    
     }
        
+
 }
-
-
