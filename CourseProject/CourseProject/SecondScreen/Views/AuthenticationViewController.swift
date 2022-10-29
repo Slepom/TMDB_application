@@ -52,41 +52,9 @@ class AuthenticationViewController: UIViewController {
             let section = Array(self.dictFinal.keys)[indexPath.section]
             switch section{
             default:
-                return self.configure(cellType: UserCell.self, with: result, for: indexPath)
+                return self.configure(cellType: UserCell.self, with: self.dictFinal[section]![indexPath.item], for: indexPath)
             }
-            
-            
-            
-            
-            
-            
-//
-//           // let section = Array(self.dictFinal.keys)[indexPath.section]
-//            let sectionArray = [Genre](self.dictFinal.keys)
-//            let section = sectionArray[indexPath.section]
-//            let resultArray = [Result](self.dictFinal[section]!)
-//            let result = resultArray[indexPath.row]
-//            return self.configure(cellType: UserCell.self, with: result, for: indexPath)
-            
-            
-            
-            
-            
-            
-//            switch section{
-//            default:
-//                return self.configure(cellType: UserCell.self, with: self.dictFinal[section]![indexPath.row], for: indexPath)
-//            }
-            
-//            let item = Array(section)[indexPath.row]
-//            return self.configure(cellType: UserCell.self, with: item, for: indexPath)
-//            switch section.key{
-//            default:
-//                return self.configure(cellType: UserCell.self, with: section.value[indexPath.row], for: indexPath)
-//
-//            }
-//
-            
+       
         })
        
 
@@ -105,9 +73,9 @@ class AuthenticationViewController: UIViewController {
         
         for genre in arrayGenre{
             snapshots.appendItems(dictFinal[genre]!, toSection: genre)
+            
         }
-       
-        dataSource?.apply(snapshots,animatingDifferences: false)
+        dataSource?.apply(snapshots,animatingDifferences: true)
     }
     
 

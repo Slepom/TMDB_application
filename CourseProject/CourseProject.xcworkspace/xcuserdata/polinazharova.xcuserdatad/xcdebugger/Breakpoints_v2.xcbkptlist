@@ -158,8 +158,8 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "createCompositionalLayout()"
             landmarkType = "7">
          </BreakpointContent>
@@ -224,38 +224,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
             endingLineNumber = "51"
-            landmarkName = "setupDataSourceTest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ED00BA3F-2BFC-4FB8-B473-241FF99899C5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "setupDataSourceTest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5E7D29FF-8BDB-4D0E-9F62-C87FA13BB01B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
             landmarkName = "setupDataSourceTest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,8 +362,8 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "reloadDataSectionsTest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -410,8 +378,8 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "reloadDataSectionsTest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -451,22 +419,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6CC18469-5B47-4121-9ABF-ABE093894727"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "83AE203B-A40E-4FE4-ADC9-A93ED3983D3B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -474,8 +426,8 @@
             filePath = "CourseProject/NetManager/GettingData/GettingData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "finalTest(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -506,8 +458,8 @@
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "reloadDataSectionsTest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -515,15 +467,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F312B201-1A00-4AB4-8DA8-A8EE942585E0"
-            shouldBeEnabled = "No"
+            uuid = "CE7F49F7-95A6-4CDB-B0FB-4EDC53B64E15"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CourseProject/SecondScreen/Views/AuthenticationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "setupDataSourceTest()"
             landmarkType = "7">
          </BreakpointContent>

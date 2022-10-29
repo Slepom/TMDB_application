@@ -40,7 +40,7 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
     }
     func configure(with result: Result){
         name.text = result.title
-        imageView.sd_setImage(with:(URL(string:"https://image.tmdb.org/t/p/original" + result.posterPath)) ,completed: nil)
+        imageView.sd_setImage(with:(URL(string:"https://image.tmdb.org/t/p/w500" + result.posterPath)) ,completed: nil)
     }
     
     
