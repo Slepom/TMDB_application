@@ -111,7 +111,7 @@
         <!--Item-->
         <scene sceneID="BdM-PQ-WMl">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="EuE-tZ-Sfm" customClass="AuthenticationViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="EuE-tZ-Sfm" customClass="SecondViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scf-So-0B6">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
