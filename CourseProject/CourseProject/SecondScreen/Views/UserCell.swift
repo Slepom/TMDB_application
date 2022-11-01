@@ -38,7 +38,7 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func configure(with result: Result){
+    func configure(with result: MoviesByGenre){
         name.text = result.title
         imageView.sd_setImage(with:(URL(string:"https://image.tmdb.org/t/p/w500" + result.posterPath)) ,completed: nil)
     }

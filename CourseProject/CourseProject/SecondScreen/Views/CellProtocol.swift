@@ -5,6 +5,6 @@ import UIKit
 
 protocol SelfConfiguringCell{
     static var reuseId: String {get}
-    func configure(with result: Result)
+    func configure(with result: MoviesByGenre)
 
 }

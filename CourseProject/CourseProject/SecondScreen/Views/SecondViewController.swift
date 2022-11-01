@@ -5,7 +5,7 @@ class SecondViewController: UIViewController {
 
     var collectionViewMovies: UICollectionView!
 
-    var genreByResult: [String:[Result]] = [:]
+    var genreByResult: [String:[MoviesByGenre]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class SecondViewController: UIViewController {
         collectionViewMovies.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
         view.addSubview(collectionViewMovies)
     }
-    private func configure<T:SelfConfiguringCell>(cellType: T.Type, with result: Result, for indexPath: IndexPath)->T{
+    private func configure<T:SelfConfiguringCell>(cellType: T.Type, with result: MoviesByGenre, for indexPath: IndexPath)->T{
         guard let cell = collectionViewMovies.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else{
             fatalError("Unable to dequeu \(cellType)")
         }
