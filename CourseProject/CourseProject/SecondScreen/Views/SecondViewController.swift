@@ -88,7 +88,15 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
         header.title.text = Array(self.genreByResult.keys).sorted(by: <)[indexPath.section]
         return header
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailsViewController()
+        //self.navigationController?.pushViewController(vc, animated: true)
+        let key = Array(self.genreByResult.keys).sorted(by: <)[indexPath.section]
+        let movie = self.genreByResult[key]![indexPath.row]
+        vc.configureByMovie(with: movie)
+        self.present(vc, animated: true, completion: nil)
+
+    }
     
     
     
