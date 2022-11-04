@@ -9,14 +9,22 @@ import UIKit
 import youtube_ios_player_helper
 class DetailsViewController: UIViewController {
 
+    var movieByGenre: MoviesByGenre!
+    var name: String!
+    var releaseDate: String!
+    var genre = UILabel()
+    
    lazy var collectionViewTrailer = UICollectionView()
     var arrayOfVideo = [Video]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         view.backgroundColor = .blue
-        
+        //navigationItem.title = self.name
     }
+    
+
+    
     
     func configureByMovie(with movie: MoviesByGenre) {
         TrailerRequest.shared.loadTrailerForMovie(movieId: movie.id) { array in
@@ -25,6 +33,8 @@ class DetailsViewController: UIViewController {
                 self.collectionViewTrailer.reloadData()
             }
         }
+        self.navigationItem.title = movie.title
+        //print(movie)
     }
 
 
@@ -38,19 +48,24 @@ class DetailsViewController: UIViewController {
         view.addSubview(collectionViewTrailer)
     }
     private func createLayout() -> UICollectionViewLayout {
-        let spacing: CGFloat = 0
+       // let spacing: CGFloat = 0
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = .init(top: spacing, leading: spacing, bottom: spacing, trailing: spacing)
+        item.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(view.frame.size.width / 1.77))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:
+                .estimated(400))
+               // .absolute(view.frame.size.width * 1))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .paging
+       section.orthogonalScrollingBehavior = .paging
         let layout = UICollectionViewCompositionalLayout(section: section)
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
         return layout
     }
 }
@@ -61,7 +76,8 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrailerCollectionViewCell", for: indexPath) as? TrailerCollectionViewCell else { return UICollectionViewCell() }
-      cell.youtubePlayer.load(withVideoId: self.arrayOfVideo[indexPath.row].key)
+        cell.configure(with: self.movieByGenre)
+        cell.youtubePlayer.load(withVideoId: self.arrayOfVideo[indexPath.item].key)
         return cell
     }
 

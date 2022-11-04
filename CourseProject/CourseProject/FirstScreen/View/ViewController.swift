@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBAction func buttonAction(_ sender: Any) {
         checkPasswordLogin()
         NetworkManager.shared.posttoken()
+        getSecondView()
     }
     
     override func viewDidLoad() {
@@ -44,6 +45,11 @@ class ViewController: UIViewController {
         viewModelButton.checkSignUpButton(login: loginTextField.text ?? "", password: passwordTextField.text ?? " ")
     }
     
+    func getSecondView(){
+        let vc = SecondViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+    }
+    
 }
-
 

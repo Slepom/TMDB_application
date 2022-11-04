@@ -9,6 +9,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Movies"
        setupCollectionView()
         GettingData.shared.finalTest { dictionary in
             self.genreByResult = dictionary
@@ -89,12 +90,15 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
         return header
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailsViewController()
-        //self.navigationController?.pushViewController(vc, animated: true)
+        
         let key = Array(self.genreByResult.keys).sorted(by: <)[indexPath.section]
         let movie = self.genreByResult[key]![indexPath.row]
+        
+        let vc = DetailsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.movieByGenre = movie
         vc.configureByMovie(with: movie)
-        self.present(vc, animated: true, completion: nil)
+        vc.modalPresentationStyle = .fullScreen
 
     }
     

@@ -10,37 +10,41 @@ import youtube_ios_player_helper
 class TrailerCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
     var youtubePlayer: YTPlayerView!
     static var reuseId: String = "TrailerCollectionViewCell"
-    let name = UILabel()
-    let releaseDate = UILabel()
-    let genre = UILabel()
+    var name = UILabel()
+    var releaseDate = UILabel()
+    var genre = UILabel()
+    var overView = UILabel()
+    var vote = UILabel()
     //let imageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.youtubePlayer = YTPlayerView()
         name.font = UIFont.preferredFont(forTextStyle: .body)
         name.textColor = .label
         releaseDate.font = UIFont.preferredFont(forTextStyle: .body)
         releaseDate.textColor = .label
         genre.font = UIFont.preferredFont(forTextStyle: .body)
         genre.textColor = .label
-        //imageView.backgroundColor = .green
-//        imageView.clipsToBounds = true
-//        imageView.frame = self.bounds
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.layer.cornerRadius = 30
-        //
-        let stackView = UIStackView(arrangedSubviews: [name, releaseDate, genre])
+        //overView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        youtubePlayer.clipsToBounds = true
+        youtubePlayer.frame = self.bounds
+        //overView.sizeToFit()
+        overView.textColor = .label
+        overView.font = UIFont.preferredFont(forTextStyle: .body)
+        overView.lineBreakMode = .byWordWrapping
+
+        let stackView = UIStackView(arrangedSubviews: [youtubePlayer ,vote, genre, releaseDate, overView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         contentView.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            //stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-        stackView.setCustomSpacing(10, after: name)
+        stackView.setCustomSpacing(10, after: youtubePlayer)
     }
     
     required init?(coder: NSCoder) {
@@ -49,8 +53,8 @@ class TrailerCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
     func configure(with result: MoviesByGenre){
         name.text = result.title
         releaseDate.text = result.releaseDate
-        genre.text = result.title
-       // imageView.sd_setImage(with:(URL(string:"https://image.tmdb.org/t/p/w500" + result.posterPath)) ,completed: nil)
+        overView.text = result.overview
+        vote.text = "IMDB rating \(result.voteAverage)"
     }
     
     
