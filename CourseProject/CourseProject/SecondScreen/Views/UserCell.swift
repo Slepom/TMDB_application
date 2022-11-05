@@ -16,7 +16,7 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
         imageView.clipsToBounds = true
         imageView.frame = self.bounds
         imageView.contentMode = .scaleAspectFill
-        self.layer.cornerRadius = 30
+        imageView.layer.cornerRadius = 30
         addSubview(imageView)
 
     }

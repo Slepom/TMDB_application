@@ -32,7 +32,7 @@ class TrailerCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
         //overView.sizeToFit()
         overView.textColor = .label
         overView.font = UIFont.preferredFont(forTextStyle: .body)
-        overView.lineBreakMode = .byWordWrapping
+       
 
         let stackView = UIStackView(arrangedSubviews: [youtubePlayer ,vote, genre, releaseDate, overView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,12 +41,14 @@ class TrailerCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            //stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         stackView.setCustomSpacing(10, after: youtubePlayer)
+        overView.lineBreakMode = .byWordWrapping
+        overView.numberOfLines = 8
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
