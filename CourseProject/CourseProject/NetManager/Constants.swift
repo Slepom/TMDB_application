@@ -7,4 +7,5 @@ let base_url = "https://api.themoviedb.org/3/authentication/token/"
 let url_login = base_url+"validate_with_login?"+"api_key="+apiKey
 let url_api = base_url+"new?api_key="+apiKey
 let url_session = "https://api.themoviedb.org/3/authentication/session/new?api_key="+apiKey
-
+var globalValueSessionId = ""
+var globalValueIdAccount = 0

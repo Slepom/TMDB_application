@@ -25,7 +25,7 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell{
         fatalError("init(coder:) has not been implemented")
     }
     func configure(with result: MoviesByGenre){
-        imageView.sd_setImage(with:(URL(string:"https://image.tmdb.org/t/p/w500" + result.posterPath)) ,completed: nil)
+        imageView.sd_setImage(with:(URL(string:"https://image.tmdb.org/t/p/w500" + (result.posterPath ?? " " ))) ,completed: nil)
     }
     
     

@@ -25,9 +25,9 @@ struct MoviesByGenre: Codable, Hashable {
     let genreIDS: [Int]
     let id: Int
     //let originalLanguage: OriginalLanguage
-    let originalTitle, overview: String
+    let originalTitle, overview: String?
     let popularity: Double
-    let posterPath, releaseDate, title: String
+    let posterPath, releaseDate, title: String?
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
@@ -48,10 +48,4 @@ struct MoviesByGenre: Codable, Hashable {
     }
 }
 
-//enum OriginalLanguage: String, Codable, Hashable {
-//    case en = "en"
-//    case fr = "fr"
-//    case ja = "ja"
-//    case zh = "zh"
-//}
 

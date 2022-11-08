@@ -39,21 +39,22 @@ class NetworkManager{
                 do {
                     
                     let postSuccess = try response.result.get().success
-                    //print("POST request is = \(postSuccess)")
+                    print("POST request is = \(postSuccess)")
                     
                     // MARK: - get session_id
                     let requestPostSession = AF.request(url_session, method: .post, parameters: ["request_token": token], encoding: JSONEncoding.default)
                     requestPostSession.responseDecodable(of: SessionModel.self) { response in
                         do {
                             let sessionId = try response.result.get().sessionID
-                            // sessionIdNew = sessionId
-                           // print("Session_id is \(sessionId)")
+                            globalValueSessionId = sessionId
+                           print("Session_id is \(sessionId)")
                             let requestDetails = AF.request("https://api.themoviedb.org/3/account?api_key=6cde63f94256f35e302a61f1dd4b7524&session_id=\(sessionId)", method: .get, encoding: JSONEncoding.default)
                             requestDetails.responseDecodable(of: DetailsAccountModel.self) { response in
                                 
                                 do {
                                     let idAccount = try response.result.get().id
-                                   // print("account id is \(idAccount)")
+                                    globalValueIdAccount = idAccount
+                                   print("account id is \(idAccount)")
                                     
                                     
                                 } catch {

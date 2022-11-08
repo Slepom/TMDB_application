@@ -20,6 +20,9 @@
 		D839EF9A28E82D230045D361 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9928E82D230045D361 /* Constants.swift */; };
 		D839EF9E28E9D30D0045D361 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9D28E9D30D0045D361 /* SessionModel.swift */; };
 		D84DF97828ED9FA400372C07 /* CreateLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84DF97728ED9FA400372C07 /* CreateLayout.swift */; };
+		D881731F291ABC1500D1177A /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881731E291ABC1500D1177A /* WatchListViewController.swift */; };
+		D8817321291AC72D00D1177A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8817320291AC72D00D1177A /* TabBarViewController.swift */; };
+		D8817323291AD49700D1177A /* WatchListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8817322291AD49700D1177A /* WatchListRequest.swift */; };
 		D88D5B1028ED91CD00AE63B1 /* GettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D5B0F28ED91CD00AE63B1 /* GettingData.swift */; };
 		D8AF075328EC568500017958 /* DetailsAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF075228EC568500017958 /* DetailsAccountModel.swift */; };
 		D8AF075528EC8E2900017958 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF075428EC8E2900017958 /* GenreModel.swift */; };
@@ -60,6 +63,9 @@
 		D839EF9928E82D230045D361 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D839EF9D28E9D30D0045D361 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		D84DF97728ED9FA400372C07 /* CreateLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLayout.swift; sourceTree = "<group>"; };
+		D881731E291ABC1500D1177A /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
+		D8817320291AC72D00D1177A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D8817322291AD49700D1177A /* WatchListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListRequest.swift; sourceTree = "<group>"; };
 		D88D5B0F28ED91CD00AE63B1 /* GettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingData.swift; sourceTree = "<group>"; };
 		D8AF075228EC568500017958 /* DetailsAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAccountModel.swift; sourceTree = "<group>"; };
 		D8AF075428EC8E2900017958 /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 		D816169A28E0BC7E00928EEC /* CourseProject */ = {
 			isa = PBXGroup;
 			children = (
+				D881731D291ABBED00D1177A /* WatchList */,
 				D8CAA3182919595A00C97CCE /* SearchScreen */,
 				D8CAA3172919593500C97CCE /* DetailsScreen */,
 				D88D5B0D28ED914500AE63B1 /* Authentication */,
@@ -145,6 +152,7 @@
 				D816169D28E0BC7E00928EEC /* SceneDelegate.swift */,
 				D81616A428E0BC8200928EEC /* Assets.xcassets */,
 				D81616A928E0BC8200928EEC /* Info.plist */,
+				D8817320291AC72D00D1177A /* TabBarViewController.swift */,
 			);
 			path = CourseProject;
 			sourceTree = "<group>";
@@ -159,8 +167,17 @@
 				D8CAA30F291431B800C97CCE /* TrailerRequest.swift */,
 				D8CAA311291431EE00C97CCE /* TrailerModel.swift */,
 				D8CAA31F2919632200C97CCE /* SearchModel.swift */,
+				D8817322291AD49700D1177A /* WatchListRequest.swift */,
 			);
 			path = NetManager;
+			sourceTree = "<group>";
+		};
+		D881731D291ABBED00D1177A /* WatchList */ = {
+			isa = PBXGroup;
+			children = (
+				D881731E291ABC1500D1177A /* WatchListViewController.swift */,
+			);
+			path = WatchList;
 			sourceTree = "<group>";
 		};
 		D88D5B0828ED8E3F00AE63B1 /* FirstScreen */ = {
@@ -429,6 +446,7 @@
 				D8E48AEE28E4912100112A43 /* User.swift in Sources */,
 				D839EF9828E82BCF0045D361 /* NetworkManager.swift in Sources */,
 				D8CAA3202919632200C97CCE /* SearchModel.swift in Sources */,
+				D8817323291AD49700D1177A /* WatchListRequest.swift in Sources */,
 				D816169C28E0BC7E00928EEC /* AppDelegate.swift in Sources */,
 				D839EF9A28E82D230045D361 /* Constants.swift in Sources */,
 				D8AF075328EC568500017958 /* DetailsAccountModel.swift in Sources */,
@@ -444,7 +462,9 @@
 				D8CAA3222919635000C97CCE /* SearchRequest.swift in Sources */,
 				D88D5B1028ED91CD00AE63B1 /* GettingData.swift in Sources */,
 				D8BBBC0B28EF31C600E0B9FD /* CellProtocol.swift in Sources */,
+				D881731F291ABC1500D1177A /* WatchListViewController.swift in Sources */,
 				D8CAA324291966ED00C97CCE /* SearchViewCell.swift in Sources */,
+				D8817321291AC72D00D1177A /* TabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

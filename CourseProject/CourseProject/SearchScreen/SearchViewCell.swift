@@ -28,12 +28,13 @@ class SearchViewCell: UICollectionViewCell{
         //subtittle.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         overView.font = UIFont.preferredFont(forTextStyle: .body)
         overView.textColor = .green
-        let innerStackView = UIStackView(arrangedSubviews: [name, subtitle, overView])
-        innerStackView.axis = .vertical
-        let otherStackView = UIStackView(arrangedSubviews: [imageView, innerStackView])
+//        let innerStackView = UIStackView(arrangedSubviews: [name, subtitle, overView])
+//        innerStackView.axis = .vertical
+//        innerStackView.distribution = .equalCentering
+        let otherStackView = UIStackView(arrangedSubviews: [imageView, name])
         otherStackView.translatesAutoresizingMaskIntoConstraints = false
         otherStackView.alignment = .center
-        otherStackView.spacing = 10
+        otherStackView.spacing = 20
         contentView.addSubview(otherStackView)
 
         NSLayoutConstraint.activate([
