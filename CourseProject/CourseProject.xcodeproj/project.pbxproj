@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6454C6DF8666F368F49AD3A6 /* Pods_CourseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258E3D618FB46B09CCC79852 /* Pods_CourseProject.framework */; };
+		D80C7C52291C114E00B71732 /* WatchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80C7C51291C114E00B71732 /* WatchListCell.swift */; };
 		D816169C28E0BC7E00928EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816169B28E0BC7E00928EEC /* AppDelegate.swift */; };
 		D816169E28E0BC7E00928EEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816169D28E0BC7E00928EEC /* SceneDelegate.swift */; };
 		D81616A028E0BC7E00928EEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816169F28E0BC7E00928EEC /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		25468D66A6BD8DEE6C20A5D7 /* Pods-CourseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseProject.release.xcconfig"; path = "Target Support Files/Pods-CourseProject/Pods-CourseProject.release.xcconfig"; sourceTree = "<group>"; };
 		258E3D618FB46B09CCC79852 /* Pods_CourseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CourseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80C7C51291C114E00B71732 /* WatchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListCell.swift; sourceTree = "<group>"; };
 		D816169828E0BC7E00928EEC /* CourseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D816169B28E0BC7E00928EEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D816169D28E0BC7E00928EEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				D881731E291ABC1500D1177A /* WatchListViewController.swift */,
+				D80C7C51291C114E00B71732 /* WatchListCell.swift */,
 			);
 			path = WatchList;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				D88D5B1028ED91CD00AE63B1 /* GettingData.swift in Sources */,
 				D8BBBC0B28EF31C600E0B9FD /* CellProtocol.swift in Sources */,
 				D881731F291ABC1500D1177A /* WatchListViewController.swift in Sources */,
+				D80C7C52291C114E00B71732 /* WatchListCell.swift in Sources */,
 				D8CAA324291966ED00C97CCE /* SearchViewCell.swift in Sources */,
 				D8817321291AC72D00D1177A /* TabBarViewController.swift in Sources */,
 			);
