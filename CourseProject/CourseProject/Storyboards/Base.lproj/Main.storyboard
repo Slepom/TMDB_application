@@ -160,10 +160,9 @@
         <scene sceneID="xm3-vO-v5R">
             <objects>
                 <tabBarController storyboardIdentifier="tabBar" id="oLg-Be-EZw" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0hF-3B-jGd">
+                    <tabBar key="tabBar" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0hF-3B-jGd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="DxK-no-orF" kind="relationship" relationship="viewControllers" id="h7a-V6-3Ie"/>
@@ -197,7 +196,6 @@
         <!--Navigation Controller-->
         <scene sceneID="mzC-TX-c2u">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I5a-j3-aEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z0J-hi-Jso" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aoc-nq-c6d">
@@ -209,6 +207,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="i8K-W7-YsS"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5a-j3-aEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-547" y="54"/>
         </scene>
@@ -229,10 +228,10 @@
             </objects>
             <point key="canvasLocation" x="6087" y="54"/>
         </scene>
-        <!--View Controller-->
+        <!--Watch List View Controller-->
         <scene sceneID="eHB-D1-5mI">
             <objects>
-                <viewController id="gI8-yy-fH5" sceneMemberID="viewController">
+                <viewController id="gI8-yy-fH5" customClass="WatchListViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1j7-ar-dHj">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,7 +248,9 @@
         <scene sceneID="oTx-oF-3hT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WH2-jg-NEc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="zYX-Ey-uLS"/>
+                    <tabBarItem key="tabBarItem" title="Search" id="zYX-Ey-uLS">
+                        <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="template"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahL-4b-gfn">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>

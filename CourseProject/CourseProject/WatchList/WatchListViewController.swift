@@ -7,12 +7,11 @@ class WatchListViewController: UIViewController {
     var watchlist = [MoviesByGenre]()
         
         
-        private lazy var tableView: UITableView = {
-            let tableView = UITableView(frame: .zero, style: .plain)
-            tableView.tableFooterView = UIView() // hide extra separator
-            tableView.keyboardDismissMode = .onDrag
-            return tableView
-        }()
+    private lazy var tableView: UITableView = {
+          let tableView = UITableView(frame: .zero, style: .plain)
+          tableView.separatorStyle = .singleLine
+          return tableView
+      }()
     
     
     
@@ -34,10 +33,13 @@ class WatchListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
         WatchListRequest.shared.getWatchlist(accountId: globalValueIdAccount, sessionId: globalValueSessionId) { movies in
+            print(globalValueSessionId)
+            print(globalValueIdAccount)
                self.watchlist = movies
                self.tableView.reloadData()
            }
        }
+    
     
 
 }
@@ -48,10 +50,8 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WatchListCell.identifier) as? WatchListCell else { return UITableViewCell() }
-        //        cell.configure(media: viewModel.arrayOfMoviesWatchlist[indexPath.row])
-                cell.configure(media: watchlist[indexPath.row])
-                //        let cell = UITableViewCell()
-                //        cell.textLabel?.text = arrayOfNumbers[indexPath.row]
+                cell.configure(media: self.watchlist[indexPath.row])
+               // cell.textLabel?.text = self.watchlist[indexPath.row].originalTitle
                 return cell
     }
     

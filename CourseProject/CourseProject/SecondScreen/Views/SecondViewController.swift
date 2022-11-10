@@ -22,6 +22,7 @@ class SecondViewController: UIViewController {
         collectionViewMovies = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         collectionViewMovies.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionViewMovies.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
+       // collectionViewMovies.backgroundColor = .black
         collectionViewMovies.dataSource = self
         collectionViewMovies.delegate = self
         collectionViewMovies.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
@@ -88,6 +89,7 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier, for: indexPath) as! SectionHeader
         header.title.text = Array(self.genreByResult.keys).sorted(by: <)[indexPath.section]
+      //  header.title.textColor = .white
         return header
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

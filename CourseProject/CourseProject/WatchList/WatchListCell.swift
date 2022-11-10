@@ -58,12 +58,12 @@ class WatchListCell: UITableViewCell{
         }
         
         public func configure(media: MoviesByGenre) {
-            //titleLabel.text = media.original_title
-           // let date = media.release_date ?? ""
-           // releaseDateLabel.text = String(date.dropLast(6))
-            //guard let url = URL(string: "https://image.tmdb.org/t/p/w500" + (media.poster_path ?? "")) else { return }
-           // posterView.sd_setImage(with: url, completed: nil)
-          //  overviewLabel.text = media.overview
+            titleLabel.text = media.originalTitle
+            let date = media.releaseDate ?? ""
+            releaseDateLabel.text = String(date.dropLast(6))
+            guard let url = URL(string: "https://image.tmdb.org/t/p/w500" + (media.posterPath ?? "")) else { return }
+            posterView.sd_setImage(with: url, completed: nil)
+            overviewLabel.text = media.overview
         }
         
         private func setupConstraints() {

@@ -9,6 +9,7 @@ import UIKit
 import youtube_ios_player_helper
 class DetailsViewController: UIViewController {
 
+    lazy var movieId = Int()
     var movieByGenre: MoviesByGenre!
     var name: String!
     var releaseDate: String!
@@ -20,13 +21,21 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         view.backgroundColor = .blue
-        //navigationItem.title = self.name
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTap))
     }
     
-
+    @objc func addTap(){
+        TrailerRequest.shared.addToWatchlist(accountID: globalValueIdAccount, mediaType: "movie", mediaId: movieId, sessionId: globalValueSessionId) {_ , _ in
+            print(self.movieId)
+        }
+    }
+    
+    
+    
     
     
     func configureByMovie(with movie: MoviesByGenre) {
+        self.movieId = movie.id
         TrailerRequest.shared.loadTrailerForMovie(movieId: movie.id) { array in
             DispatchQueue.main.async {
                 self.arrayOfVideo = array
