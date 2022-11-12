@@ -30,15 +30,15 @@ class NetworkManager{
     
     // MARK: - authentication with lohin & password
     
-    func posttoken(){
+    func posttoken(userName: String, password: String,_ complitionHandler: @escaping (Bool)->Void){
         
-        //var sessionIdNew = ""
         getRequest { token in
-            let requestPost = AF.request(url_login, method: .post, parameters: ["username": User.logins[0].login ?? "", "password": User.logins[0].password ?? "", "request_token": token], encoding: JSONEncoding.default )
+            let requestPost = AF.request(url_login, method: .post, parameters: ["username": userName, "password": password, "request_token": token], encoding: JSONEncoding.default )
             requestPost.responseDecodable(of: TokenModel.self) { response in
                 do {
                     
                     let postSuccess = try response.result.get().success
+                    complitionHandler(postSuccess)
                     print("POST request is = \(postSuccess)")
                     
                     // MARK: - get session_id
