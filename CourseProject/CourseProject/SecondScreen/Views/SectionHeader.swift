@@ -18,7 +18,7 @@ class SectionHeader: UICollectionReusableView {
         let separator = UIView(frame: .zero)
         separator.translatesAutoresizingMaskIntoConstraints = false
         separator.backgroundColor = .quaternaryLabel
-        title.textColor = .label
+        title.textColor = .white
         title.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 22, weight: .bold))
         
 

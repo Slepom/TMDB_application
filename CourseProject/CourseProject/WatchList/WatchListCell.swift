@@ -18,7 +18,7 @@ class WatchListCell: UITableViewCell{
             label.translatesAutoresizingMaskIntoConstraints = false
             label.numberOfLines = 0
             label.textAlignment = .left
-            label.textColor = .black
+            label.textColor = .white
             label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
             return label
         }()
@@ -28,7 +28,7 @@ class WatchListCell: UITableViewCell{
             label.translatesAutoresizingMaskIntoConstraints = false
             label.numberOfLines = 1
             label.textAlignment = .left
-            label.textColor = .black
+            label.textColor = .white
             label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
             return label
         }()
@@ -38,7 +38,7 @@ class WatchListCell: UITableViewCell{
             label.translatesAutoresizingMaskIntoConstraints = false
             label.numberOfLines = 5
             label.textAlignment = .left
-            label.textColor = .black
+            label.textColor = .white
             label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
             return label
         }()

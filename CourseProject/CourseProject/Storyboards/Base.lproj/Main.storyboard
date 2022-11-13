@@ -144,9 +144,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DxK-no-orF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Movies" image="film" catalog="system" id="CdG-bb-iRw" userLabel="Genre"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hs1-JL-Cfr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hs1-JL-Cfr">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -161,9 +164,20 @@
         <scene sceneID="xm3-vO-v5R">
             <objects>
                 <tabBarController storyboardIdentifier="tabBar" id="oLg-Be-EZw" sceneMemberID="viewController">
-                    <tabBar key="tabBar" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0hF-3B-jGd">
+                    <tabBar key="tabBar" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="0hF-3B-jGd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tinColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="barTintColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="setSelectedImage">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="DxK-no-orF" kind="relationship" relationship="viewControllers" id="h7a-V6-3Ie"/>
@@ -181,9 +195,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gOB-s2-bex" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="zOK-WC-xCr"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GMr-La-8sj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="GMr-La-8sj">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -217,7 +234,7 @@
             <objects>
                 <viewController id="6yf-Ef-5h7" customClass="SearchViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sEl-hD-J3T">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="gfD-5S-QQW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -234,7 +251,7 @@
             <objects>
                 <viewController id="gI8-yy-fH5" customClass="WatchListViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1j7-ar-dHj">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="rxo-nk-435"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -253,9 +270,12 @@
                         <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="template"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahL-4b-gfn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="ahL-4b-gfn">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -272,9 +292,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PlQ-u2-5vc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorite" image="star.fill" catalog="system" id="SgX-v1-Yge"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7EL-MM-cRp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="7EL-MM-cRp">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

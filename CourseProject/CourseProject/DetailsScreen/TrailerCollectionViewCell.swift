@@ -21,16 +21,14 @@ class TrailerCollectionViewCell: UICollectionViewCell, SelfConfiguringCell {
         super.init(frame: frame)
         self.youtubePlayer = YTPlayerView()
         name.font = UIFont.preferredFont(forTextStyle: .body)
-        name.textColor = .label
+        name.textColor = .white
         releaseDate.font = UIFont.preferredFont(forTextStyle: .body)
-        releaseDate.textColor = .label
+        releaseDate.textColor = .white
         genre.font = UIFont.preferredFont(forTextStyle: .body)
-        genre.textColor = .label
-        //overView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        genre.textColor = .white
         youtubePlayer.clipsToBounds = true
         youtubePlayer.frame = self.bounds
-        //overView.sizeToFit()
-        overView.textColor = .label
+        overView.textColor = .white
         overView.font = UIFont.preferredFont(forTextStyle: .body)
        
 

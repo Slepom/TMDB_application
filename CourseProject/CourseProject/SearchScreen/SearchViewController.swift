@@ -11,13 +11,13 @@ class SearchViewController: UIViewController {
         let sb = UISearchController()
         sb.searchBar.placeholder = "Enter the movie name"
         sb.searchBar.searchBarStyle = .minimal
+        sb.tabBarItem.badgeColor = .black
         return sb
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title  = "Search"
-        view.backgroundColor = .systemBackground
         searchBar.searchResultsUpdater = self
         navigationItem.searchController = searchBar
         setupCollectionView()
@@ -30,31 +30,26 @@ class SearchViewController: UIViewController {
         collectionSearch.register(SearchViewCell.self, forCellWithReuseIdentifier: SearchViewCell.reuseId)
         collectionSearch.dataSource = self
         collectionSearch.delegate = self
+        collectionSearch.backgroundColor = .black
         view.addSubview(collectionSearch)
     }
   
     private func createCompositionalLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1))
+            heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-       item.contentInsets = .init(top: 5, leading: 0, bottom: 5, trailing: 0)
+        item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(1))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(200))
+               // .absolute(view.frame.size.width * 1))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
-//        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-//                                                heightDimension: .estimated(50.0))
-//        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
-//                                                                 elementKind: UICollectionView.elementKindSectionHeader,
-//                                                                 alignment: .top)
-//
         let section = NSCollectionLayoutSection(group: group)
-        //section.orthogonalScrollingBehavior = .continuous
-       
-        //section.boundarySupplementaryItems = [header]
-        //section.orthogonalScrollingBehavior = .continuous
         let layout = UICollectionViewCompositionalLayout(section: section)
+//        let config = UICollectionViewCompositionalLayoutConfiguration()
+//        config.interSectionSpacing = 20
+//        layout.configuration = config
         return layout
     }
 

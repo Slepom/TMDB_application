@@ -51,6 +51,7 @@ class DetailsViewController: UIViewController {
         collectionViewTrailer = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         collectionViewTrailer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionViewTrailer.register(TrailerCollectionViewCell.self, forCellWithReuseIdentifier: TrailerCollectionViewCell.reuseId)
+        collectionViewTrailer.backgroundColor = .black
         collectionViewTrailer.dataSource = self
         collectionViewTrailer.delegate = self
         

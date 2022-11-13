@@ -22,9 +22,9 @@ class SecondViewController: UIViewController {
         collectionViewMovies = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
         collectionViewMovies.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionViewMovies.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
-       // collectionViewMovies.backgroundColor = .black
         collectionViewMovies.dataSource = self
         collectionViewMovies.delegate = self
+        collectionViewMovies.backgroundColor = .black
         collectionViewMovies.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
         view.addSubview(collectionViewMovies)
     }
