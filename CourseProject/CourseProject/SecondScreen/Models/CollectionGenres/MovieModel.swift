@@ -48,6 +48,17 @@ struct MoviesByGenre: Codable, Hashable {
     }
 }
 
+struct SessionResponce: Codable {
+    let success: Bool
+    let failure: Bool?
+    let status_code: Int?
+    let status_message: String?
+    let session_id: String?
+    let guestSessionID: String?
+}
+
+
+
 struct Welcome: Codable {
     let success: Bool
     let statusCode: Int

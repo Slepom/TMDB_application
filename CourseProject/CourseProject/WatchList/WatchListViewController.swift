@@ -57,6 +57,18 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         130
     }
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let removeCell = UIContextualAction(style: .normal, title: "Remove") {_,_,_ in
+            WatchListRequest.shared.removeMoviewFromWatchlist(accountID: globalValueIdAccount, mediaType: "movie", mediaId: self.watchlist[indexPath.row].id , sessionId: globalValueSessionId) { result, media in
+                print(result)
+                print(media)
+                tableView.reloadData()
+            }
+        }
+            
+        removeCell.backgroundColor = .red
+        return UISwipeActionsConfiguration(actions: [removeCell])
+        
+    }
     
 }

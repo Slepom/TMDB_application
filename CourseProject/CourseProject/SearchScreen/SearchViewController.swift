@@ -42,14 +42,11 @@ class SearchViewController: UIViewController {
         item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(200))
-               // .absolute(view.frame.size.width * 1))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         let layout = UICollectionViewCompositionalLayout(section: section)
-//        let config = UICollectionViewCompositionalLayoutConfiguration()
-//        config.interSectionSpacing = 20
-//        layout.configuration = config
+
         return layout
     }
 

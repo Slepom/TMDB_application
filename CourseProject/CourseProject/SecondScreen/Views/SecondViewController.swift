@@ -14,9 +14,14 @@ class SecondViewController: UIViewController {
         GettingData.shared.finalTest { dictionary in
             self.genreByResult = dictionary
             self.collectionViewMovies.reloadData()
-        }
+          }
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: #selector(self.signout))
     }
 
+//    @objc func signout(){
+//        let vc = ViewController()
+//        navigationController?.pushViewController(vc, animated: false)
+//    }
     
     private func setupCollectionView(){
         collectionViewMovies = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())

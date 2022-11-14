@@ -43,7 +43,6 @@ class DetailsViewController: UIViewController {
             }
         }
         self.navigationItem.title = movie.title
-        //print(movie)
     }
 
 
@@ -58,7 +57,6 @@ class DetailsViewController: UIViewController {
         view.addSubview(collectionViewTrailer)
     }
     private func createLayout() -> UICollectionViewLayout {
-       // let spacing: CGFloat = 0
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0))
@@ -67,7 +65,6 @@ class DetailsViewController: UIViewController {
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:
                 .estimated(400))
-               // .absolute(view.frame.size.width * 1))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
