@@ -22,7 +22,6 @@ class TrailerRequest {
                 let filtered = self.arrayOfVideosForMovie.filter { video in
                     return video.type.rawValue == "Trailer"
                 }
-                print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\(filtered.count)")
                 completion(filtered)
             }
             catch {
