@@ -8,12 +8,12 @@ class SearchRequest{
     static let shared = SearchRequest()
     private init(){}
     
-    func search(with query: String, completion: @escaping([Movie])->Void) {
+    func search(with query: String, completion: @escaping([MoviesByGenre])->Void) {
         
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         
         let movieRequest = AF.request("https:api.themoviedb.org/3/search/movie?api_key=\(apiKey)&query=\(query)", method: .get)
-        movieRequest.responseDecodable(of: SearchModel.self) { responce in
+        movieRequest.responseDecodable(of: MovieModel.self) { responce in
             do {
                 let data = try responce.result.get().results
                 completion(data)

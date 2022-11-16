@@ -44,6 +44,7 @@ class DetailsViewController: UIViewController {
         }
         self.navigationItem.title = movie.title
     }
+ 
 
 
     private func setupCollectionView(){

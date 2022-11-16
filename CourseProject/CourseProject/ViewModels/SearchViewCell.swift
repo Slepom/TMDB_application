@@ -93,22 +93,24 @@ class SearchViewCell: UICollectionViewCell{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func configure(with result: Movie){
-        guard let posterPath = result.poster_path else{ return}
+    func configure(with result: MoviesByGenre){
+        guard let posterPath = result.posterPath else{ return}
         imageView.sd_setImage(with:(URL(string:"https://image.tmdb.org/t/p/w500" + posterPath)) ,completed: nil)
-        name.text = result.original_title ?? " "
-        subtitle.text = result.release_date ?? " "
+        name.text = result.originalTitle ?? " "
+        subtitle.text = result.releaseDate ?? " "
         overView.text = result.overview ?? " "
         
         voteLabellet.text = {
-            if result.vote_average > 7.0{
+            switch result.voteAverage{
+            case 5.0...6.9:
+                voteLabellet.textColor = .orange
+                return String(result.voteAverage)
+            case 7.0...10:
                 voteLabellet.textColor = .green
-                return String(result.vote_average)
-
-            }
-                else {
-                    voteLabellet.textColor = .red
-                    return String(result.vote_average)
+                return String(result.voteAverage)
+            default:
+                voteLabellet.textColor = .red
+                return String(result.voteAverage)
             }
         }()
     }

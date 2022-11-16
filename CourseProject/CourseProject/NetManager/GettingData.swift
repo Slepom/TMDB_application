@@ -19,7 +19,6 @@ class GettingData{
             
             do {
                 let genres = try response.result.get().genres
-                
                 complitionHandler(genres)
             }
             catch{

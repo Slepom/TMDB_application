@@ -9,3 +9,4 @@ let url_api = base_url+"new?api_key="+apiKey
 let url_session = "https://api.themoviedb.org/3/authentication/session/new?api_key="+apiKey
 var globalValueSessionId = ""
 var globalValueIdAccount = 0
+var idGenreToNameGenre: [Int:String] = [:]

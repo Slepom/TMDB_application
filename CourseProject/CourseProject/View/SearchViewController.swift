@@ -3,7 +3,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    var arrayOfMovie = [Movie]()
+    var arrayOfMovie = [MoviesByGenre]()
     
     lazy var collectionSearch = UICollectionView()
     
@@ -77,6 +77,18 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchViewCell.reuseId, for: indexPath) as? SearchViewCell else {return UICollectionViewCell()}
         cell.configure(with: movie)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let movie = self.arrayOfMovie[indexPath.row]
+        
+        let vc = DetailsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.movieByGenre = movie
+        vc.configureByMovie(with: movie)
+        vc.modalPresentationStyle = .fullScreen
+
     }
     
     
