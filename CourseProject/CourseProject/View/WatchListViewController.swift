@@ -33,8 +33,6 @@ class WatchListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         WatchListRequest.shared.getWatchlist(accountId: globalValueIdAccount, sessionId: globalValueSessionId) { movies in
-            print(globalValueSessionId)
-            print(globalValueIdAccount)
             self.watchlist = movies
             self.tableView.reloadData()
         }
@@ -55,20 +53,35 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        130
-    }
+          view.frame.width * 0.3 + 16
+      }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let removeCell = UIContextualAction(style: .normal, title: "Remove") {_,_,_ in
-            WatchListRequest.shared.removeMoviewFromWatchlist(accountID: globalValueIdAccount, mediaType: "movie", mediaId: self.watchlist[indexPath.row].id , sessionId: globalValueSessionId) { result, media in
-                print(result)
-                print(media)
-                tableView.reloadData()
+        let removeCell = UIContextualAction(style: .normal, title: "Remove") {[weak self] _,_,_ in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.watchlist.remove(at: indexPath.row)
             }
-        }
+            WatchListRequest.shared.removeMoviewFromWatchlist(accountID: globalValueIdAccount, mediaType: "movie", mediaId: self.watchlist[indexPath.row].id , sessionId: globalValueSessionId) { result, media in
+                self.tableView.reloadData()
+            }
             
+        }
+        
+
         removeCell.backgroundColor = .red
         return UISwipeActionsConfiguration(actions: [removeCell])
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = self.watchlist[indexPath.row]
+        
+        let vc = DetailsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.movieByGenre = movie
+        vc.configureByMovie(with: movie)
+        vc.modalPresentationStyle = .fullScreen
     }
     
 }
