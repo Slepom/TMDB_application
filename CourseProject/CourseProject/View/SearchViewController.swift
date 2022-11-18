@@ -4,6 +4,13 @@ import UIKit
 class SearchViewController: UIViewController {
 
     var arrayOfMovie = [MoviesByGenre]()
+    private let label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.text = "Hello World"
+        return label
+    }()
     
     lazy var collectionSearch = UICollectionView()
     
@@ -20,6 +27,10 @@ class SearchViewController: UIViewController {
         navigationItem.title  = "Search"
         searchBar.searchResultsUpdater = self
         navigationItem.searchController = searchBar
+        view.addSubview(label)
+        label.frame = CGRect(x: 100, y: 100, width: view.center.x, height: view.center.y)
+        
+        
         setupCollectionView()
     }
     
@@ -58,12 +69,14 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         guard let query = searchController.searchBar.text else { return }
+    
         SearchRequest.shared.search(with:query.trimmingCharacters(in: .whitespaces)) { movie in
             self.arrayOfMovie = movie
             DispatchQueue.main.async {
                 self.collectionSearch.reloadData()
             }
         }
+       
     }
     
 }

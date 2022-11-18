@@ -26,10 +26,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.alpha = 0
+        button.alpha = 1
         checkLabel.text = " "
         loginTextField.delegate = self
         passwordTextField.delegate = self
+        loginTextField.text = "Slepom"
+        passwordTextField.text = "Leon103115"
+        
         
     }
     
@@ -50,10 +53,10 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate{
     
-    func textFieldDidChangeSelection(_ textField: UITextField){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-        self.button.alpha = 1
-        }
-    }
+//    func textFieldDidChangeSelection(_ textField: UITextField){
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+//        self.button.alpha = 1
+//        }
+//    }
 
 }

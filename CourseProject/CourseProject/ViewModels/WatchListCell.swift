@@ -71,8 +71,12 @@ class WatchListCell: UITableViewCell{
             contentView.addSubview(titleLabel)
             contentView.addSubview(overviewLabel)
             contentView.addSubview(releaseDateLabel)
-            
+            selectionStyle = .none
+            backgroundColor = .clear
+        
+
             NSLayoutConstraint.activate([
+                
                 posterView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
                 posterView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.2),
                 posterView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
