@@ -16,12 +16,16 @@ class SecondViewController: UIViewController {
             self.collectionViewMovies.reloadData()
           }
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: #selector(self.signout))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style:.plain, target: self, action: #selector(self.signout))
     }
 
-//    @objc func signout(){
-//        let vc = ViewController()
-//        navigationController?.pushViewController(vc, animated: false)
-//    }
+    @objc func signout(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "signIn") as? ViewController else { print("signIn vc id not set"); return }
+        self.view.window?.rootViewController = controller
+        self.view.window?.window?.makeKeyAndVisible()
+
+    }
     
     private func setupCollectionView(){
         collectionViewMovies = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
@@ -70,7 +74,7 @@ class SecondViewController: UIViewController {
 
 }
 
-extension SecondViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension SecondViewController: UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         self.genreByResult.keys.count
     }
@@ -97,6 +101,7 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
       //  header.title.textColor = .white
         return header
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let key = Array(self.genreByResult.keys).sorted(by: <)[indexPath.section]
@@ -110,7 +115,12 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
 
     }
     
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (collectionViewMovies.contentSize.height - 100) - scrollView.frame.height{
+           // print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        }
+    }
     
     
     

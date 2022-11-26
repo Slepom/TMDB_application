@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //guard let newButton = button else {return}
         button.alpha = 1
         checkLabel.text = " "
         loginTextField.delegate = self

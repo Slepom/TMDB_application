@@ -21,7 +21,8 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         view.backgroundColor = .blue
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTap))
+        navigationItem.rightBarButtonItem =
+        UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(addTap))
     }
     
     @objc func addTap(){
