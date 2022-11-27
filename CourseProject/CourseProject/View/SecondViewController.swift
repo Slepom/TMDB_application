@@ -24,6 +24,7 @@ class SecondViewController: UIViewController {
         guard let controller = storyboard.instantiateViewController(withIdentifier: "signIn") as? ViewController else { print("signIn vc id not set"); return }
         self.view.window?.rootViewController = controller
         self.view.window?.window?.makeKeyAndVisible()
+        NetworkManager.shared.deleteSession(sessionId: globalValueSessionId)
 
     }
     

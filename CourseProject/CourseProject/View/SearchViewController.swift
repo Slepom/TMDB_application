@@ -33,7 +33,10 @@ class SearchViewController: UIViewController {
         
         setupCollectionView()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionSearch.reloadData()
+    }
     
     private func setupCollectionView(){
         collectionSearch = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())

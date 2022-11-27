@@ -81,7 +81,21 @@ class NetworkManager{
         }
         
     }
-    
+    func deleteSession(sessionId: String) {
+            let parameters: [String: Any] = [
+                "session_id": sessionId
+            ]
+            let genresRequest = AF.request("https://api.themoviedb.org/3/authentication/session?api_key=\(apiKey)", method: .delete, parameters: parameters, encoding: JSONEncoding.default)
+            genresRequest.responseDecodable(of: SessionResponce.self) { response in
+                do {
+                    let data = try response.result.get()
+                    print(data.success)
+                }
+                catch {
+                    print("error: \(error)")
+                }
+            }
+        }
     
     
     
