@@ -30,12 +30,7 @@ class SearchViewController: UIViewController {
         view.addSubview(label)
         label.frame = CGRect(x: 100, y: 100, width: view.center.x, height: view.center.y)
         
-        
         setupCollectionView()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.collectionSearch.reloadData()
     }
     
     private func setupCollectionView(){
@@ -73,7 +68,9 @@ extension SearchViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         guard let query = searchController.searchBar.text else { return }
     
-        SearchRequest.shared.search(with:query.trimmingCharacters(in: .whitespaces)) { movie in
+        SearchRequest.shared.search(with:query.trimmingCharacters(in: .whitespaces)) { [weak self] movie in
+            guard let self = self else {return}
+            
             self.arrayOfMovie = movie
             DispatchQueue.main.async {
                 self.collectionSearch.reloadData()

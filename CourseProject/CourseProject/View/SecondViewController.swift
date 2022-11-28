@@ -11,11 +11,12 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         title = "Top 20 Movies by genres"
        setupCollectionView()
-        GettingData.shared.finalTest { dictionary in
+        GettingData.shared.finalTest { [weak self] dictionary in
+            guard let self = self else {return}
             self.genreByResult = dictionary
             self.collectionViewMovies.reloadData()
           }
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .rewind, target: self, action: #selector(self.signout))
+
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style:.plain, target: self, action: #selector(self.signout))
     }
 
@@ -99,7 +100,6 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier, for: indexPath) as! SectionHeader
         header.title.text = Array(self.genreByResult.keys).sorted(by: <)[indexPath.section]
-      //  header.title.textColor = .white
         return header
     }
     
@@ -115,11 +115,10 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
         vc.modalPresentationStyle = .fullScreen
 
     }
-    
+    // MARK: - trying create pagination
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         if position > (collectionViewMovies.contentSize.height - 100) - scrollView.frame.height{
-           // print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         }
     }
     

@@ -17,12 +17,15 @@
 		D81616A828E0BC8200928EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81616A628E0BC8200928EEC /* LaunchScreen.storyboard */; };
 		D81616B028E0BE1A00928EEC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D81616AF28E0BE1A00928EEC /* Podfile */; };
 		D81616B328E0BF5300928EEC /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81616B228E0BF5300928EEC /* TokenModel.swift */; };
+		D829FC602933D0FF00ABD4D9 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829FC5F2933D0FF00ABD4D9 /* LaunchScreenViewController.swift */; };
 		D839EF9828E82BCF0045D361 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9728E82BCF0045D361 /* NetworkManager.swift */; };
 		D839EF9A28E82D230045D361 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9928E82D230045D361 /* Constants.swift */; };
 		D839EF9E28E9D30D0045D361 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9D28E9D30D0045D361 /* SessionModel.swift */; };
 		D881731F291ABC1500D1177A /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881731E291ABC1500D1177A /* WatchListViewController.swift */; };
 		D8817323291AD49700D1177A /* WatchListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8817322291AD49700D1177A /* WatchListRequest.swift */; };
+		D88803142933E26000537BE3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D88803132933E26000537BE3 /* Lottie */; };
 		D88D5B1028ED91CD00AE63B1 /* GettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D5B0F28ED91CD00AE63B1 /* GettingData.swift */; };
+		D89AE64E2933E35A00E9ECFE /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = D89AE64D2933E35A00E9ECFE /* movie.json */; };
 		D8AF075328EC568500017958 /* DetailsAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF075228EC568500017958 /* DetailsAccountModel.swift */; };
 		D8AF075528EC8E2900017958 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF075428EC8E2900017958 /* GenreModel.swift */; };
 		D8AF075A28EC976C00017958 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AF075928EC976C00017958 /* MovieModel.swift */; };
@@ -56,12 +59,14 @@
 		D81616A928E0BC8200928EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D81616AF28E0BE1A00928EEC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = CourseProject/Authentication/Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D81616B228E0BF5300928EEC /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		D829FC5F2933D0FF00ABD4D9 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		D839EF9728E82BCF0045D361 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D839EF9928E82D230045D361 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D839EF9D28E9D30D0045D361 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		D881731E291ABC1500D1177A /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		D8817322291AD49700D1177A /* WatchListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListRequest.swift; sourceTree = "<group>"; };
 		D88D5B0F28ED91CD00AE63B1 /* GettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingData.swift; sourceTree = "<group>"; };
+		D89AE64D2933E35A00E9ECFE /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
 		D8AF075228EC568500017958 /* DetailsAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAccountModel.swift; sourceTree = "<group>"; };
 		D8AF075428EC8E2900017958 /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
 		D8AF075928EC976C00017958 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6454C6DF8666F368F49AD3A6 /* Pods_CourseProject.framework in Frameworks */,
+				D88803142933E26000537BE3 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +154,7 @@
 				D8E48AEC28E48ABC00112A43 /* Storyboards */,
 				D816169B28E0BC7E00928EEC /* AppDelegate.swift */,
 				D816169D28E0BC7E00928EEC /* SceneDelegate.swift */,
-				D81616A428E0BC8200928EEC /* Assets.xcassets */,
+				D89AE64C2933E2FA00E9ECFE /* Assets */,
 				D81616A928E0BC8200928EEC /* Info.plist */,
 			);
 			path = CourseProject;
@@ -192,6 +198,7 @@
 				D881731E291ABC1500D1177A /* WatchListViewController.swift */,
 				D8CAA3192919599100C97CCE /* SearchViewController.swift */,
 				D8CAA30D2914317700C97CCE /* DetailsViewController.swift */,
+				D829FC5F2933D0FF00ABD4D9 /* LaunchScreenViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,6 +209,15 @@
 				D81616AF28E0BE1A00928EEC /* Podfile */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D89AE64C2933E2FA00E9ECFE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D89AE64D2933E35A00E9ECFE /* movie.json */,
+				D81616A428E0BC8200928EEC /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		D8E48AEB28E48A8800112A43 /* ViewModels */ = {
@@ -243,6 +259,9 @@
 			dependencies = (
 			);
 			name = CourseProject;
+			packageProductDependencies = (
+				D88803132933E26000537BE3 /* Lottie */,
+			);
 			productName = CourseProject;
 			productReference = D816169828E0BC7E00928EEC /* CourseProject.app */;
 			productType = "com.apple.product-type.application";
@@ -271,6 +290,9 @@
 				Base,
 			);
 			mainGroup = D816168F28E0BC7E00928EEC;
+			packageReferences = (
+				D88803122933E26000537BE3 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = D816169928E0BC7E00928EEC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81616A828E0BC8200928EEC /* LaunchScreen.storyboard in Resources */,
+				D89AE64E2933E35A00E9ECFE /* movie.json in Resources */,
 				D81616A528E0BC8200928EEC /* Assets.xcassets in Resources */,
 				D81616B028E0BE1A00928EEC /* Podfile in Resources */,
 				D81616A328E0BC7E00928EEC /* Main.storyboard in Resources */,
@@ -355,6 +378,7 @@
 				D839EF9828E82BCF0045D361 /* NetworkManager.swift in Sources */,
 				D8CAA3202919632200C97CCE /* SearchModel.swift in Sources */,
 				D8817323291AD49700D1177A /* WatchListRequest.swift in Sources */,
+				D829FC602933D0FF00ABD4D9 /* LaunchScreenViewController.swift in Sources */,
 				D816169C28E0BC7E00928EEC /* AppDelegate.swift in Sources */,
 				D839EF9A28E82D230045D361 /* Constants.swift in Sources */,
 				D8AF075328EC568500017958 /* DetailsAccountModel.swift in Sources */,
@@ -588,6 +612,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D88803122933E26000537BE3 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D88803132933E26000537BE3 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D88803122933E26000537BE3 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D816169028E0BC7E00928EEC /* Project object */;
 }
