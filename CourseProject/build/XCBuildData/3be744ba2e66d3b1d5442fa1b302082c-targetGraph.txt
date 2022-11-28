@@ -1,0 +1,10 @@
+Target dependency graph (5 targets)
+Alamofire in Pods, no dependencies
+SDWebImage in Pods, no dependencies
+youtube-ios-player-helper-Assets in Pods, no dependencies
+youtube-ios-player-helper in Pods, depends on:
+youtube-ios-player-helper-Assets in Pods (explicit)
+Pods-CourseProject in Pods, depends on:
+Alamofire in Pods (explicit)
+SDWebImage in Pods (explicit)
+youtube-ios-player-helper in Pods (explicit)
