@@ -94,9 +94,6 @@ class GettingData{
                             returnDictionary[genre.name] = result
                             complitionaHandler(returnDictionary)
                         
-//                        returnDictionary[genre] = result
-//                        complitionaHandler(returnDictionary)
-                        //print("---------\(genre.name)----------------------------\(result)")
                     }
                     catch{
                          print("!!!!!!!!!\(error)")

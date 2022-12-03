@@ -66,7 +66,7 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        guard let query = searchController.searchBar.text else { return }
+        guard let query = searchController.searchBar.text else {return }
     
         SearchRequest.shared.search(with:query.trimmingCharacters(in: .whitespaces)) { [weak self] movie in
             guard let self = self else {return}

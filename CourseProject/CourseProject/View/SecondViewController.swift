@@ -7,6 +7,7 @@ class SecondViewController: UIViewController {
 
     var genreByResult: [String:[MoviesByGenre]] = [:]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Top 20 Movies by genres"
@@ -20,6 +21,8 @@ class SecondViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style:.plain, target: self, action: #selector(self.signout))
     }
 
+    // MARK: - finish session & get to authentication VC
+    
     @objc func signout(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let controller = storyboard.instantiateViewController(withIdentifier: "signIn") as? ViewController else { print("signIn vc id not set"); return }
@@ -39,6 +42,7 @@ class SecondViewController: UIViewController {
         collectionViewMovies.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
         view.addSubview(collectionViewMovies)
     }
+    
     private func configure<T:SelfConfiguringCell>(cellType: T.Type, with result: MoviesByGenre, for indexPath: IndexPath)->T{
         guard let cell = collectionViewMovies.dequeueReusableCell(withReuseIdentifier: cellType.reuseId, for: indexPath) as? T else{
             fatalError("Unable to dequeu \(cellType)")

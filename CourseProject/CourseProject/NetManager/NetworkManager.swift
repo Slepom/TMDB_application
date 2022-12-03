@@ -39,15 +39,16 @@ class NetworkManager{
                     
                     let postSuccess = try response.result.get().success
                     complitionHandler(postSuccess)
-                    print("POST request is = \(postSuccess)")
                     
-                    // MARK: - get session_id
+                    guard postSuccess == true else {return}
+                    
+    // MARK: - get session_id
                     let requestPostSession = AF.request(url_session, method: .post, parameters: ["request_token": token], encoding: JSONEncoding.default)
                     requestPostSession.responseDecodable(of: SessionModel.self) { response in
                         do {
                             let sessionId = try response.result.get().sessionID
                             globalValueSessionId = sessionId
-                            let requestDetails = AF.request("https://api.themoviedb.org/3/account?api_key=6cde63f94256f35e302a61f1dd4b7524&session_id=\(sessionId)", method: .get, encoding: JSONEncoding.default)
+                            let requestDetails = AF.request("https://api.themoviedb.org/3/account?api_key=\(apiKey)&session_id=\(sessionId)", method: .get, encoding: JSONEncoding.default)
                             requestDetails.responseDecodable(of: DetailsAccountModel.self) { response in
                                 
                                 do {
@@ -81,6 +82,9 @@ class NetworkManager{
         }
         
     }
+
+    // MARK: - Delete session
+    
     func deleteSession(sessionId: String) {
             let parameters: [String: Any] = [
                 "session_id": sessionId
