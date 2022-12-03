@@ -38,7 +38,6 @@ class ViewController: UIViewController {
         passwordTextField.delegate = self
         loginTextField.text = "Slepom"
         passwordTextField.text = "Leon103115"
-        
     }
     
     private func checkLabelFunck(){

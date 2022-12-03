@@ -12,7 +12,12 @@ class SearchViewController: UIViewController {
         return label
     }()
     
-    lazy var collectionSearch = UICollectionView()
+    lazy var collectionSearch: UICollectionView = {
+        let collectionSearch = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
+        //collectionSearch.collectionViewLayout = createCompositionalLayout()
+        collectionSearch.translatesAutoresizingMaskIntoConstraints = false
+        return collectionSearch
+    }()
     
     private var searchBar: UISearchController = {
         let sb = UISearchController()
@@ -27,15 +32,25 @@ class SearchViewController: UIViewController {
         navigationItem.title  = "Search"
         searchBar.searchResultsUpdater = self
         navigationItem.searchController = searchBar
-        view.addSubview(label)
-        label.frame = CGRect(x: 100, y: 100, width: view.center.x, height: view.center.y)
+        //view.addSubview(label)
+        label.frame = CGRect(x: view.center.x, y: view.center.y, width: 100, height: 100)
         
         setupCollectionView()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        NSLayoutConstraint.activate([
+            collectionSearch.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionSearch.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionSearch.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionSearch.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
     private func setupCollectionView(){
-        collectionSearch = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
-        collectionSearch.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        //collectionSearch.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionSearch.register(SearchViewCell.self, forCellWithReuseIdentifier: SearchViewCell.reuseId)
         collectionSearch.dataSource = self
         collectionSearch.delegate = self
@@ -50,7 +65,7 @@ class SearchViewController: UIViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(200))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
@@ -66,20 +81,33 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-        guard let query = searchController.searchBar.text else {return }
+        guard let query = searchController.searchBar.text else {return}
+        
+        if query.isEmpty{
+            self.arrayOfMovie.removeAll()
+            self.collectionSearch.reloadData()
+        }
     
+        searchController.showsSearchResultsController =  true
+
         SearchRequest.shared.search(with:query.trimmingCharacters(in: .whitespaces)) { [weak self] movie in
             guard let self = self else {return}
-            
+           
             self.arrayOfMovie = movie
+
             DispatchQueue.main.async {
                 self.collectionSearch.reloadData()
             }
         }
+        
        
     }
     
+   
+    
 }
+
+
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         self.arrayOfMovie.count
@@ -91,6 +119,8 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.configure(with: movie)
         return cell
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
