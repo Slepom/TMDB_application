@@ -7,7 +7,7 @@
 
 import UIKit
 import Lottie
-class LaunchScreenViewController: ViewController {
+class LaunchScreenViewController: AuthenticationViewController {
 
     var animationView: LottieAnimationView!
     
@@ -23,7 +23,7 @@ class LaunchScreenViewController: ViewController {
         animationView.play()
         view.addSubview(animationView)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "signIn") as? ViewController else { print("signIn vc id not set"); return }
+            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "signIn") as? AuthenticationViewController else { print("signIn vc id not set"); return }
             self.present(controller, animated: true, completion: nil)
         }
         

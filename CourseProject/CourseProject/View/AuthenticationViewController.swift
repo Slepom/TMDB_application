@@ -2,7 +2,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AuthenticationViewController: UIViewController {
     
     
     @IBOutlet weak var button: UIButton!
@@ -18,13 +18,19 @@ class ViewController: UIViewController {
         guard let userName = loginTextField.text, let password = passwordTextField.text else {return}
 
         NetworkManager.shared.posttoken(userName: userName, password: password) { checkAuthentication in
+          print("1111111111111 \(checkAuthentication)")
             if checkAuthentication == true{
+                print("2222222222222 \(checkAuthentication)")
                 self.getSecondView()
-            } else{
                 self.checkLabel.text = "Wrong password"
-            }
-//            checkAuthentication == true ? self.getSecondView() : self.checkLabelFunck()
 
+            } else{
+                print("3333333333333 \(checkAuthentication)")
+
+                //self.checkLabel.text = "Wrong password"
+            }
+////            checkAuthentication == true ? self.getSecondView() : self.checkLabelFunck()
+//
         }
    
     }
@@ -59,7 +65,7 @@ class ViewController: UIViewController {
   
 }
 
-extension ViewController: UITextFieldDelegate{
+extension AuthenticationViewController: UITextFieldDelegate{
     
 //    func textFieldDidChangeSelection(_ textField: UITextField){
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 2){

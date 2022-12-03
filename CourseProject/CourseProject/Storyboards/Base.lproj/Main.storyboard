@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mak-tY-WUk">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,7 +13,7 @@
             <objects>
                 <viewController id="Mak-tY-WUk" customClass="LaunchScreenViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WUT-cN-KNm">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nna-do-8ev"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -25,19 +23,19 @@
             </objects>
             <point key="canvasLocation" x="329" y="53"/>
         </scene>
-        <!--View Controller-->
+        <!--Authentication View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="signIn" modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signIn" modalPresentationStyle="overFullScreen" id="BYZ-38-t0r" customClass="AuthenticationViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC" userLabel="ViewStart">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gladiatorImage" translatesAutoresizingMaskIntoConstraints="NO" id="Cdv-pc-e4u">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOK-Br-UmR">
-                                <rect key="frame" x="40" y="773" width="348" height="34"/>
+                                <rect key="frame" x="40" y="447" width="520" height="34"/>
                                 <color key="backgroundColor" red="0.15119460230000001" green="0.043478444220000002" blue="0.01966942847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="22"/>
@@ -49,7 +47,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPx-4l-p5a">
-                                <rect key="frame" x="40" y="718" width="348" height="35"/>
+                                <rect key="frame" x="40" y="392" width="520" height="35"/>
                                 <color key="backgroundColor" red="0.15119460230000001" green="0.043478444220000002" blue="0.01966942847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="22"/>
@@ -61,7 +59,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-Ui-ekE">
-                                <rect key="frame" x="183" y="848" width="62" height="30"/>
+                                <rect key="frame" x="183" y="522" width="62" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="play.fill" catalog="system" symbolScale="default" renderingMode="hierarchical">
@@ -78,7 +76,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdV-ao-lGe">
-                                <rect key="frame" x="20" y="815" width="388" height="0.0"/>
+                                <rect key="frame" x="20" y="489" width="560" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="1129" y="54"/>
         </scene>
-        <!--Second View Controller-->
+        <!--All Movie View Controller-->
         <scene sceneID="BdM-PQ-WMl">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="EuE-tZ-Sfm" customClass="SecondViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="EuE-tZ-Sfm" customClass="AllMovieViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zfh-Tm-PGj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -187,7 +185,7 @@
             <objects>
                 <viewController id="6yf-Ef-5h7" customClass="SearchViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sEl-hD-J3T">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="gfD-5S-QQW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -204,7 +202,7 @@
             <objects>
                 <viewController id="gI8-yy-fH5" customClass="WatchListViewController" customModule="CourseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1j7-ar-dHj">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="rxo-nk-435"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -218,7 +216,6 @@
         <!--Search-->
         <scene sceneID="oTx-oF-3hT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W4g-E0-vO8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WH2-jg-NEc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="zYX-Ey-uLS">
                         <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="template"/>
@@ -236,6 +233,7 @@
                         <segue destination="6yf-Ef-5h7" kind="relationship" relationship="rootViewController" id="HPT-Qh-2Z3"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W4g-E0-vO8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3629" y="54"/>
         </scene>

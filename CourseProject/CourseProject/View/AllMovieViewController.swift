@@ -1,7 +1,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class AllMovieViewController: UIViewController {
 
     var collectionViewMovies: UICollectionView!
 
@@ -25,7 +25,7 @@ class SecondViewController: UIViewController {
     
     @objc func signout(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "signIn") as? ViewController else { print("signIn vc id not set"); return }
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "signIn") as? AuthenticationViewController else { print("signIn vc id not set"); return }
         self.view.window?.rootViewController = controller
         self.view.window?.window?.makeKeyAndVisible()
         NetworkManager.shared.deleteSession(sessionId: globalValueSessionId)
@@ -80,7 +80,7 @@ class SecondViewController: UIViewController {
 
 }
 
-extension SecondViewController: UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate{
+extension AllMovieViewController: UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         self.genreByResult.keys.count
     }
