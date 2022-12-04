@@ -812,5 +812,212 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "44660CA5-C722-4117-AF03-A8AFB7E74BE0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/View/AuthenticationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "buttonAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F770E3E5-7F1B-428B-A8FF-13DBC11B61B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/View/AuthenticationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "buttonAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F770E3E5-7F1B-428B-A8FF-13DBC11B61B9 - e4ee22ba71b36453"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.buttonAction(Any) -&gt; ()"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "926">
+               </Location>
+               <Location
+                  uuid = "F770E3E5-7F1B-428B-A8FF-13DBC11B61B9 - 5e67da7087b427e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in CourseProject.AuthenticationViewController.buttonAction(Any) -&gt; ()"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FFA910FA-7271-49B1-8C01-E83F0E21D050"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/View/AuthenticationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "buttonAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FFA910FA-7271-49B1-8C01-E83F0E21D050 - e4ee22ba71b36180"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.buttonAction(Any) -&gt; ()"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "97">
+               </Location>
+               <Location
+                  uuid = "FFA910FA-7271-49B1-8C01-E83F0E21D050 - e4ee22ba71b36180"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.buttonAction(Any) -&gt; ()"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "286">
+               </Location>
+               <Location
+                  uuid = "FFA910FA-7271-49B1-8C01-E83F0E21D050 - e4ee22ba71b36180"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.buttonAction(Any) -&gt; ()"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "696">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1902FC38-7551-4908-A60A-CA9EC17A738F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/ViewModels/AuthenticationVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "authentication(userName:password:complitionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1902FC38-7551-4908-A60A-CA9EC17A738F - 103c7bc18caed00e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationVM.authentication(userName: Swift.String, password: Swift.String, complitionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/ViewModels/AuthenticationVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  uuid = "1902FC38-7551-4908-A60A-CA9EC17A738F - 9d8d1978b8db5a9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in CourseProject.AuthenticationVM.authentication(userName: Swift.String, password: Swift.String, complitionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Desktop/TMDB_app/CourseProject/CourseProject/ViewModels/AuthenticationVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "147">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97B5B74E-AD4F-4DFE-B95D-53AC61AE50A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/ViewModels/AuthenticationVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "authentication(userName:password:complitionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71D99DBD-AC63-491D-9864-6A93841FBE3D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/ViewModels/AuthenticationVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "authentication(userName:password:complitionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

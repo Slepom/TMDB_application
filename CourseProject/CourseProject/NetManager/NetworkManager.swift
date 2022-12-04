@@ -21,68 +21,11 @@ class NetworkManager{
                 complitionHandler(requestToken)
             }
             catch{
-                print(error)
+                print("Error getting token \(error)")
             }
         }
         
     }
-    
-    
-    // MARK: - authentication with lohin & password
-//
-//    func posttoken(userName: String, password: String,_ complitionHandler: @escaping (Bool)->Void){
-//
-//        getRequest { token in
-//            let requestPost = AF.request(url_login, method: .post, parameters: ["username": userName, "password": password, "request_token": token], encoding: JSONEncoding.default )
-//            requestPost.responseDecodable(of: TokenModel.self) { response in
-//                do {
-//
-//                    let postSuccess = try response.result.get().success
-//                    complitionHandler(postSuccess)
-//
-//                    guard postSuccess == true else {return}
-//
-//                    // MARK: - get session_id
-//                    let requestPostSession = AF.request(url_session, method: .post, parameters: ["request_token": token], encoding: JSONEncoding.default)
-//                    requestPostSession.responseDecodable(of: SessionModel.self) { response in
-//                        do {
-//                            let sessionId = try response.result.get().sessionID
-//                            globalValueSessionId = sessionId
-//                            let requestDetails = AF.request("https://api.themoviedb.org/3/account?api_key=\(apiKey)&session_id=\(sessionId)", method: .get, encoding: JSONEncoding.default)
-//                            requestDetails.responseDecodable(of: DetailsAccountModel.self) { response in
-//
-//                                do {
-//                                    let idAccount = try response.result.get().id
-//                                    globalValueIdAccount = idAccount
-//
-//
-//                                } catch {
-//                                    print(error)
-//                                }
-//
-//
-//                            }
-//                        }
-//                        catch {
-//                            print(error)
-//                        }
-//
-//                    }
-//
-//                }
-//                catch {
-//                    print(error)
-//                }
-//
-//            }
-//
-//        }
-//
-//    }
-    
-    
-    
-   
     
     
     // MARK: - Getting session request with login & password
@@ -94,25 +37,26 @@ class NetworkManager{
                 let postSuccess = try response.result.get().success
                 complitionHandler(postSuccess)
             } catch{
-                
+                print("Error posting session \(error)")
             }
         }
         
     }
     
+    // MARK: - Creating new session
     
-    
-    func createSession(requestToken: String, completion: @escaping (String) -> Void){
+    func createSession(requestToken: String, completion: @escaping (SessionModel) -> Void){
         
         let genresRequest = AF.request("https://api.themoviedb.org/3/authentication/session/new?api_key=\(apiKey)", method: .post, parameters: ["request_token": requestToken], encoding: JSONEncoding.default)
         genresRequest.responseDecodable(of: SessionModel.self) { response in
             do {
-                let sessionId = try response.result.get().sessionID
-                globalValueSessionId = sessionId
-                completion(sessionId)
+                let data = try response.result.get()
+                
+                globalValueSessionId = data.sessionID
+                completion(data)
             }
             catch {
-                print("error: \(error)")
+                print("Error new session \(error)")
             }
         }
     }
@@ -128,7 +72,7 @@ class NetworkManager{
                 globalValueIdAccount = idAccount
             }
             catch {
-                print("error: \(error)")
+                print("Error new account id \(error)")
             }
         }
     }
@@ -146,18 +90,11 @@ class NetworkManager{
                 print(data.success)
             }
             catch {
-                print("error: \(error)")
+                print("Error new delete session \(error)")
             }
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
+  
 }
 
