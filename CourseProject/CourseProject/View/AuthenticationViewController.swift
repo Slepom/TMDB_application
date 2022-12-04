@@ -4,6 +4,7 @@ import UIKit
 
 class AuthenticationViewController: UIViewController {
     
+    private let viewModel = AuthenticationVM()
     
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var loginTextField: UITextField!
@@ -17,20 +18,28 @@ class AuthenticationViewController: UIViewController {
         
         guard let userName = loginTextField.text, let password = passwordTextField.text else {return}
 
-        NetworkManager.shared.posttoken(userName: userName, password: password) { checkAuthentication in
-          print("1111111111111 \(checkAuthentication)")
-            if checkAuthentication == true{
-                print("2222222222222 \(checkAuthentication)")
-                self.getSecondView()
-                self.checkLabel.text = "Wrong password"
-
-            } else{
-                print("3333333333333 \(checkAuthentication)")
-
-                //self.checkLabel.text = "Wrong password"
-            }
-////            checkAuthentication == true ? self.getSecondView() : self.checkLabelFunck()
+//        NetworkManager.shared.posttoken(userName: userName, password: password) { checkAuthentication in
+//          print("1111111111111 \(checkAuthentication)")
+//            if checkAuthentication == true{
+//                print("2222222222222 \(checkAuthentication)")
+//                self.getSecondView()
+//                self.checkLabel.text = "Wrong password"
 //
+//            } else{
+//                print("3333333333333 \(checkAuthentication)")
+//
+//                //self.checkLabel.text = "Wrong password"
+//            }
+//////            checkAuthentication == true ? self.getSecondView() : self.checkLabelFunck()
+
+        
+        viewModel.authentication(userName: userName, password: password) { status in
+         
+            if status == true{
+                self.getSecondView()
+            } else{
+                self.checkLabel.text = "Wrong password"
+            }
         }
    
     }
@@ -42,8 +51,8 @@ class AuthenticationViewController: UIViewController {
         //checkLabel.text = " "
         loginTextField.delegate = self
         passwordTextField.delegate = self
-        loginTextField.text = "Slepom"
-        passwordTextField.text = "Leon103115"
+        //loginTextField.text = "Slepom"
+        //passwordTextField.text = "Leon103115"
     }
     
     private func checkLabelFunck(){
