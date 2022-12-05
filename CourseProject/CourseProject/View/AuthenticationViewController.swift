@@ -20,12 +20,12 @@ class AuthenticationViewController: UIViewController {
         
         viewModel.authentication(userName: userName, password: password) { status in
             
-            print("1 \(status)")
+            //print("1 \(status)")
             if status == true{
-                print("2 \(status)")
+                //print("2 \(status)")
                 self.getSecondView()
             } else{
-                print("3 \(status)")
+                //print("3 \(status)")
                 self.checkLabel.text = "Wrong password"
             }
         }
@@ -35,11 +35,11 @@ class AuthenticationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let newButton = button else {return}
-        newButton.alpha = 1
+        newButton.alpha = 0
         loginTextField.delegate = self
         passwordTextField.delegate = self
-        loginTextField.text = "Slepom"
-        passwordTextField.text = "Leon103115"
+        //loginTextField.text = "Slepom"
+        //passwordTextField.text = "Leon103115"
     }
     
     private func checkLabelFunck(){
@@ -63,10 +63,10 @@ class AuthenticationViewController: UIViewController {
 
 extension AuthenticationViewController: UITextFieldDelegate{
     
-//        func textFieldDidChangeSelection(_ textField: UITextField){
-//                UIView.animate(withDuration: 4, delay: 0) {
-//                    self.button.alpha = 1
-//                }
-//        }
+        func textFieldDidChangeSelection(_ textField: UITextField){
+                UIView.animate(withDuration: 4, delay: 0) {
+                    self.button.alpha = 1
+                }
+        }
     
 }

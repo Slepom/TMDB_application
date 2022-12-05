@@ -16,13 +16,13 @@ class AuthenticationVM{
                         
                     }
                     complitionHandler(session.success)
-                
+                    
                 }
-                    }
-                
+            }
+            
         }
         
-    
+        
     }
     
 }

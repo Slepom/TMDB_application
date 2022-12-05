@@ -4,6 +4,8 @@ import UIKit
 class SearchViewController: UIViewController {
 
     var arrayOfMovie = [MoviesByGenre]()
+    var arrayPopularMovie = [MoviesByGenre]()
+    
     private let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,9 +31,19 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NetworkManager.shared.getPopularMovie { arrayOfMovie in
+            self.arrayPopularMovie = arrayOfMovie
+            self.collectionSearch.reloadData()
+        }
+        
+        
+        
         navigationItem.title  = "Search"
         searchBar.searchResultsUpdater = self
+        searchBar.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchBar
+        definesPresentationContext = true
         //view.addSubview(label)
         label.frame = CGRect(x: view.center.x, y: view.center.y, width: 100, height: 100)
         
@@ -87,18 +99,19 @@ extension SearchViewController: UISearchResultsUpdating{
             self.arrayOfMovie.removeAll()
             self.collectionSearch.reloadData()
         }
-    
-        searchController.showsSearchResultsController =  true
-
-        SearchRequest.shared.search(with:query.trimmingCharacters(in: .whitespaces)) { [weak self] movie in
-            guard let self = self else {return}
-           
-            self.arrayOfMovie = movie
-
-            DispatchQueue.main.async {
-                self.collectionSearch.reloadData()
+       
+            
+            searchController.showsSearchResultsController =  true
+            
+            SearchRequest.shared.search(with:query.trimmingCharacters(in: .whitespaces)) { [weak self] movie in
+                guard let self = self else {return}
+                
+                self.arrayOfMovie = movie
+                
+                DispatchQueue.main.async {
+                    self.collectionSearch.reloadData()
+                }
             }
-        }
         
        
     }
@@ -110,11 +123,26 @@ extension SearchViewController: UISearchResultsUpdating{
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.arrayOfMovie.count
+        switch self.searchBar.isActive{
+        case true: return self.arrayOfMovie.count
+        case false: return self.arrayPopularMovie.count
+        }
+        
+        
+       // self.arrayOfMovie.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let movie = self.arrayOfMovie[indexPath.row]
+        
+        var movie: MoviesByGenre!
+        switch self.searchBar.isActive{
+        case true: movie = self.arrayOfMovie[indexPath.row]
+        case false: movie = self.arrayPopularMovie[indexPath.row]
+        }
+       // let movie = self.arrayOfMovie[indexPath.row]
+        
+        
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchViewCell.reuseId, for: indexPath) as? SearchViewCell else {return UICollectionViewCell()}
         cell.configure(with: movie)
         return cell
@@ -124,7 +152,15 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let movie = self.arrayOfMovie[indexPath.row]
+        var movie: MoviesByGenre!
+        switch self.searchBar.isActive{
+        case true: movie = self.arrayOfMovie[indexPath.row]
+        case false: movie = self.arrayPopularMovie[indexPath.row]
+        }
+        
+        
+        
+       // let movie = self.arrayOfMovie[indexPath.row]
         
         let vc = DetailsViewController()
         self.navigationController?.pushViewController(vc, animated: true)

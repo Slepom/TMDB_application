@@ -35,6 +35,7 @@ class NetworkManager{
         requestPost.responseDecodable(of: TokenModel.self) { response in
             do {
                 let postSuccess = try response.result.get().success
+                print("!!!!!!!!!!!!!!!!!!\(postSuccess)")
                 complitionHandler(postSuccess)
             } catch{
                 print("Error posting session \(error)")
@@ -93,6 +94,26 @@ class NetworkManager{
                 print("Error new delete session \(error)")
             }
         }
+    }
+    
+// https://api.themoviedb.org/3/movie/popular?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&page=1
+    
+    func getPopularMovie(_ complitionHandler: @escaping ([MoviesByGenre]) -> Void){
+        
+        let request = AF.request("https://api.themoviedb.org/3/movie/popular?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&page=1", method: .get)
+        request.responseDecodable(of: MovieModel.self) { response in
+            
+            do {
+                let requestToken = try response.result.get().results
+                
+                // print(requestToken)
+                complitionHandler(requestToken)
+            }
+            catch{
+                print("Error getting popular movie \(error)")
+            }
+        }
+        
     }
     
   

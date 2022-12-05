@@ -1,9 +1,4 @@
-//
-//  DetailsViewController.swift
-//  CourseProject
-//
-//  Created by Полина Жарова on 3.11.22.
-//
+
 
 import UIKit
 import youtube_ios_player_helper
@@ -70,7 +65,7 @@ class DetailsViewController: UIViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-       section.orthogonalScrollingBehavior = .paging
+        section.orthogonalScrollingBehavior = .paging
         let layout = UICollectionViewCompositionalLayout(section: section)
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.interSectionSpacing = 20
@@ -87,6 +82,7 @@ extension DetailsViewController: UICollectionViewDataSource, UICollectionViewDel
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrailerCollectionViewCell", for: indexPath) as? TrailerCollectionViewCell else { return UICollectionViewCell() }
         cell.configure(with: self.movieByGenre)
         cell.youtubePlayer.load(withVideoId: self.arrayOfVideo[indexPath.item].key)
+        
         return cell
     }
 
