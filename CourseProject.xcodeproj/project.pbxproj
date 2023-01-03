@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CFECEFF29642350003E4BED /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1CFECEFE29642350003E4BED /* Podfile */; };
 		6454C6DF8666F368F49AD3A6 /* Pods_CourseProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258E3D618FB46B09CCC79852 /* Pods_CourseProject.framework */; };
 		D80C7C52291C114E00B71732 /* WatchListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80C7C51291C114E00B71732 /* WatchListCell.swift */; };
 		D816169C28E0BC7E00928EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816169B28E0BC7E00928EEC /* AppDelegate.swift */; };
@@ -15,7 +16,6 @@
 		D81616A328E0BC7E00928EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81616A128E0BC7E00928EEC /* Main.storyboard */; };
 		D81616A528E0BC8200928EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D81616A428E0BC8200928EEC /* Assets.xcassets */; };
 		D81616A828E0BC8200928EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81616A628E0BC8200928EEC /* LaunchScreen.storyboard */; };
-		D81616B028E0BE1A00928EEC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D81616AF28E0BE1A00928EEC /* Podfile */; };
 		D81616B328E0BF5300928EEC /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81616B228E0BF5300928EEC /* TokenModel.swift */; };
 		D829FC602933D0FF00ABD4D9 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829FC5F2933D0FF00ABD4D9 /* LaunchScreenViewController.swift */; };
 		D839EF9828E82BCF0045D361 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839EF9728E82BCF0045D361 /* NetworkManager.swift */; };
@@ -51,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CFECEFE29642350003E4BED /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		25468D66A6BD8DEE6C20A5D7 /* Pods-CourseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseProject.release.xcconfig"; path = "Target Support Files/Pods-CourseProject/Pods-CourseProject.release.xcconfig"; sourceTree = "<group>"; };
 		258E3D618FB46B09CCC79852 /* Pods_CourseProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CourseProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80C7C51291C114E00B71732 /* WatchListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListCell.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		D81616A428E0BC8200928EEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D81616A728E0BC8200928EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D81616A928E0BC8200928EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D81616AF28E0BE1A00928EEC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = CourseProject/Authentication/Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D81616B228E0BF5300928EEC /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		D829FC5F2933D0FF00ABD4D9 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		D839EF9728E82BCF0045D361 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -138,6 +138,7 @@
 		D816168F28E0BC7E00928EEC = {
 			isa = PBXGroup;
 			children = (
+				1CFECEFE29642350003E4BED /* Podfile */,
 				D816169A28E0BC7E00928EEC /* CourseProject */,
 				D816169928E0BC7E00928EEC /* Products */,
 				64F10C0FC87E4BEBF1A7636D /* Pods */,
@@ -159,7 +160,6 @@
 				D8E48AEB28E48A8800112A43 /* ViewModels */,
 				D88D5B0A28ED8E5700AE63B1 /* Models */,
 				D88D5B0B28ED8E6800AE63B1 /* View */,
-				D88D5B0D28ED914500AE63B1 /* Authentication */,
 				D81616B128E0BEF100928EEC /* NetManager */,
 				D8E48AEC28E48ABC00112A43 /* Storyboards */,
 				D816169B28E0BC7E00928EEC /* AppDelegate.swift */,
@@ -211,14 +211,6 @@
 				D8CAA30D2914317700C97CCE /* DetailsViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		D88D5B0D28ED914500AE63B1 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				D81616AF28E0BE1A00928EEC /* Podfile */,
-			);
-			path = Authentication;
 			sourceTree = "<group>";
 		};
 		D89AE64C2933E2FA00E9ECFE /* Assets */ = {
@@ -322,10 +314,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CFECEFF29642350003E4BED /* Podfile in Resources */,
 				D81616A828E0BC8200928EEC /* LaunchScreen.storyboard in Resources */,
 				D81616A528E0BC8200928EEC /* Assets.xcassets in Resources */,
 				D88A85D829390D2E009E77C4 /* circle.json in Resources */,
-				D81616B028E0BE1A00928EEC /* Podfile in Resources */,
 				D81616A328E0BC7E00928EEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
