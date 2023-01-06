@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "289310B7-00A3-463C-8E5C-431280AD1F31"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D688C8B8-4CCE-41F3-A22E-D77FF67F5971"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseProject/View/AuthenticationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "AuthenticationViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D688C8B8-4CCE-41F3-A22E-D77FF67F5971 - ebe812c240dda775"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.button.getter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/slepom/Desktop/Course/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "D688C8B8-4CCE-41F3-A22E-D77FF67F5971 - 28c6e5b133541761"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.button.setter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/slepom/Desktop/Course/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "D688C8B8-4CCE-41F3-A22E-D77FF67F5971 - 32d63e33cb50b72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.button.modify : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/slepom/Desktop/Course/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "D688C8B8-4CCE-41F3-A22E-D77FF67F5971 - cb86ed6f19ae997d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.button.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/slepom/Desktop/Course/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "D688C8B8-4CCE-41F3-A22E-D77FF67F5971 - 5f2b1a55d9e7cf40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CourseProject.AuthenticationViewController"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/slepom/Desktop/Course/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "D688C8B8-4CCE-41F3-A22E-D77FF67F5971 - df71ee72dabba096"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseProject.AuthenticationViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CourseProject.AuthenticationViewController&gt;"
+                  moduleName = "CourseProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/slepom/Desktop/Course/CourseProject/View/AuthenticationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
