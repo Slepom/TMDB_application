@@ -96,8 +96,7 @@ class NetworkManager{
         }
     }
     
-// https://api.themoviedb.org/3/movie/popular?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&page=1
-    
+    // MARK: - Getting top 20 popular movies
     func getPopularMovie(_ complitionHandler: @escaping ([MoviesByGenre]) -> Void){
         
         let request = AF.request("https://api.themoviedb.org/3/movie/popular?api_key=6cde63f94256f35e302a61f1dd4b7524&language=en-US&page=1", method: .get)

@@ -8,6 +8,8 @@ class SearchRequest{
     static let shared = SearchRequest()
     private init(){}
     
+    // MARK: - Getting data after search
+    
     func search(with query: String, completion: @escaping([MoviesByGenre])->Void) {
         
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }

@@ -7,7 +7,7 @@ class WatchListRequest{
     private init(){}
     var arrayWatchlistMoview = [MoviesByGenre]()
         
-    // MARK: - request for add movie from watch list
+    // MARK: - Request for show watch list movie
     
         func getWatchlist(accountId: Int, sessionId: String, completion: @escaping(([MoviesByGenre])->())) {
 
@@ -26,7 +26,7 @@ class WatchListRequest{
             }
         }
     
-    // MARK: - request for delete movie from watch list
+    // MARK: - Request for delete movie from watch list
         func removeMoviewFromWatchlist(accountID: Int, mediaType: String, mediaId: Int, sessionId: String, completion: @escaping (SessionResponce, Int) -> Void) {
     
                 let parameters: [String: Any] = [

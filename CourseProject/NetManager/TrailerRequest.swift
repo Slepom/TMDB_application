@@ -12,6 +12,9 @@ class TrailerRequest {
     var arrayOfVideosForMovie = [Video]()
     var arrayOfVideosForTV = [Video]()
 
+    
+    
+    // MARK: - Getting trailer movie
     func loadTrailerForMovie(movieId: Int, completion: @escaping ([Video]) -> ()) {
         
         let genresRequest = AF.request("https://api.themoviedb.org/3/movie/\(movieId)/videos?api_key=\(apiKey)", method: .get)
@@ -32,6 +35,7 @@ class TrailerRequest {
         
     }
     
+    // MARK: - Add movie to watch list
     func addToWatchlist(accountID: Int, mediaType: String, mediaId: Int, sessionId: String, completion: @escaping (Welcome, String) -> Void) {
            
            let parameters: [String: Any] = [

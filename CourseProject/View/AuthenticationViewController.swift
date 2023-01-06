@@ -14,52 +14,57 @@ class AuthenticationViewController: UIViewController {
     @IBOutlet weak var checkLabel: UILabel!
     
     
+    
+    // MARK: - Button action & registered user login
+    
     @IBAction func buttonAction(_ sender: Any) {
         
         guard let userName = loginTextField.text, let password = passwordTextField.text else {return}
         
         viewModel.authentication(userName: userName, password: password) { status in
             
-            //print("1 \(status)")
             if status == true{
-                //print("2 \(status)")
                 self.getSecondView()
             } else{
-                //print("3 \(status)")
-                self.checkLabel.text = "Wrong password"
+                self.checkLabelFunc()
             }
         }
         
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let newButton = button else {return}
         newButton.alpha = 0
+    
         loginTextField.delegate = self
         passwordTextField.delegate = self
+
         //loginTextField.text = "Slepom"
         //passwordTextField.text = "Leon103115"
     }
     
-    private func checkLabelFunck(){
+    // MARK: - User verification function
+    private func checkLabelFunc(){
         checkLabel.text = "Wrong password"
     }
     
     
     
-    func getSecondView(){
+    // MARK: - Transition to second View function
+    
+  private func getSecondView(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "tabBar")
-        //        vc.modalPresentationStyle = .fullScreen
-        //        self.present(vc, animated: false)
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //  guard let controller = storyboard.instantiateViewController(withIdentifier: "second") as? ViewController else { print("signIn vc id not set"); return }
         self.view.window?.rootViewController = vc
         self.view.window?.window?.makeKeyAndVisible()
     }
     
 }
+
+// MARK: - Animation button
 
 extension AuthenticationViewController: UITextFieldDelegate{
     
